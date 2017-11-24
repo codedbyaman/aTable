@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_width="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/background_greenboard"
+        android:scaleType="centerCrop"/>
+    <EditText
+        android:id="@+id/et_input"
+        android:layout_width="match_parent"
+        android:layout_height="70sp"
+        android:layout_marginTop="100dp"
+        android:layout_marginRight="90dp"
+        android:layout_marginLeft="90dp"
+        android:background="@drawable/edit_text_bg"
+        android:hint="Input Number"
+        android:textAlignment="center"
+        android:inputType="number"
+        android:alpha=".7"/>
+    <Button
+        android:id="@+id/bt_submit"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:text="submit"
+        android:textStyle="bold"
+        android:background="#e1d8d8"
+        android:layout_below="@+id/et_input"
+        android:layout_marginTop="100dp"/>
+
+</RelativeLayout>
