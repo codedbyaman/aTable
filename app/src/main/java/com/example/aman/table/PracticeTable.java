@@ -26,14 +26,21 @@ public class PracticeTable extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 String numberText = editText.getText().toString();
                 if (numberText.isEmpty()) {
                     Toast.makeText(PracticeTable.this, "Please enter any number", Toast.LENGTH_LONG).show();
 
                     return;
                 }
-
                 long number = Long.parseLong(numberText);
+
+                if (number>999){
+                    Toast.makeText(PracticeTable.this, "Please enter a number less than 1000", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+
 
                 Intent intent = new Intent(PracticeTable.this, DetailActivity.class);
                 intent.putExtra("number", number);
