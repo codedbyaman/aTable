@@ -33,13 +33,13 @@ public class PracticeTable extends AppCompatActivity {
 
                     return;
                 }
-                long number = Long.parseLong(numberText);
 
-                if (number>999){
-                    Toast.makeText(PracticeTable.this, "Please enter a number less than 1000", Toast.LENGTH_SHORT).show();
+                if (numberText.length()>4){
+                    Toast.makeText(PracticeTable.this, "Please enter a number less than 10000", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
+                long number = Long.parseLong(numberText);
 
 
                 Intent intent = new Intent(PracticeTable.this, DetailActivity.class);
