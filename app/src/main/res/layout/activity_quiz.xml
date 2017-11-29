@@ -2,8 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@drawable/background_greenboard">
+    android:background="@drawable/background_greenboard"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,102 +13,111 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:text="Quiz"
-            android:textColor="#ffffff"
             android:textAlignment="center"
+            android:textColor="#ffffff"
             android:textSize="30sp"
-            android:textStyle="bold"/>
-        <view
+            android:textStyle="bold" />
+        <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginLeft="30dp"
             android:layout_marginBottom="15dp"
-            android:background="@android:color/white"/>
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@android:color/white" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="10dp"
+            android:layout_marginTop="40dp"
             android:gravity="center_horizontal"
-            android:layout_marginTop="40dp">
-        <TextView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:text="12"
-            android:textSize="29sp"
-            android:textColor="@android:color/white"
-            android:gravity="center" />
-        <TextView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:text="@string/multiply_sign"
-            android:textSize="29sp"
-            android:gravity="center"
-            android:textColor="@android:color/white"/>
+            android:orientation="horizontal"
+            android:padding="10dp">
+
             <TextView
+                android:id="@+id/tv_number1"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:text="10"
-                android:textSize="29sp"
-                android:textColor="@android:color/white"
-                android:gravity="center"/>
-            <TextView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:text="@string/equals_to"
-                android:textSize="29sp"
                 android:gravity="center"
-                android:textColor="@android:color/white"/>
+                android:text="12"
+                android:textColor="@android:color/white"
+                android:textSize="29sp" />
+
             <TextView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:text= "@string/question_mark"
-                android:textSize="29sp"
+                android:gravity="center"
+                android:text="@string/multiply_sign"
                 android:textColor="@android:color/white"
-                android:gravity="center"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_horizontal"
-            android:layout_marginTop="40dp">
-            <Button
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:text="ans1"/>
-            <Button
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:text="ans2"
-                android:layout_marginLeft="5dp"/>
-            <Button
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:text="ans3"
-                android:layout_marginLeft="5dp"/>
-                <Button
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:text="ans4"
-                android:layout_marginLeft="5dp"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <Button
-                android:layout_width="wrap_content"
+                android:textSize="29sp" />
+
+            <TextView
+                android:id="@+id/tv_number2"
+                android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:text="result"
-                android:layout_gravity="center"/>
+                android:gravity="center"
+                android:text="10"
+                android:textColor="@android:color/white"
+                android:textSize="29sp" />
 
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:text="@string/equals_to"
+                android:textColor="@android:color/white"
+                android:textSize="29sp" />
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:text="@string/question_mark"
+                android:textColor="@android:color/white"
+                android:textSize="29sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/tv_ans1"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:text="ans1" />
+
+            <Button
+                android:id="@+id/tv_answer2"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="40dp"
+                android:text="ans2" />
 
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
 
+            <Button
+                android:id="@+id/tv_answer3"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:text="ans3" />
 
+            <Button
+                android:id="@+id/tv_answer4"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="40dp"
+                android:text="ans4" />
 
         </LinearLayout>
+    </LinearLayout>
+
 
 </RelativeLayout>
 
