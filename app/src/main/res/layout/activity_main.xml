@@ -44,16 +44,15 @@
                 android:layout_height="@dimen/main_practice_button_height"
                 android:layout_marginTop="@dimen/main_practic_button_marginTop"
                 android:text="practice"
-                android:textStyle="bold" />
+                android:textStyle="bold"/>
 
             <Button
                 android:id="@+id/bt_quiz"
-                android:layout_width="140dp"
-                android:layout_height="80dp"
-                android:layout_marginTop="30dp"
+                android:layout_width="@dimen/main_quiz_button_width"
+                android:layout_height="@dimen/main_quiz_button_height"
+                android:layout_marginTop="@dimen/main_quiz_button_marginTop"
                 android:text="quiz"
-                android:textStyle="bold"
-                android:visibility="gone" />
+                android:textStyle="bold"/>
         </LinearLayout>
 
         <LinearLayout
