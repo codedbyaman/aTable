@@ -12,12 +12,12 @@
     <EditText
         android:id="@+id/et_input"
         android:layout_width="match_parent"
-        android:layout_height="70sp"
-        android:layout_marginTop="100dp"
-        android:layout_marginRight="90dp"
-        android:layout_marginLeft="90dp"
-        android:paddingLeft="5dp"
-        android:paddingRight="5dp"
+        android:layout_height="@dimen/activity_practice_edit_text_layout_height"
+        android:layout_marginTop="@dimen/activity_practice_edit_text_marginTop"
+        android:layout_marginRight="@dimen/activity_practice_edit_text_marginRight"
+        android:layout_marginLeft="@dimen/activity_practice_edit_text_marginLeft"
+        android:paddingLeft="@dimen/activity_practice_edit_text_paddingLeft"
+        android:paddingRight="@dimen/activity_practice_edit_text_paddingRight"
         android:background="@drawable/edit_text_bg"
         android:hint="Input Number"
         android:textAlignment="center"
@@ -26,13 +26,14 @@
     <Button
         android:id="@+id/bt_submit"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
+        android:layout_height="@dimen/activity_practice_button_layout_height"
+        android:layout_marginLeft="@dimen/activity_practice_button_marginLeft"
+        android:layout_marginRight="@dimen/activity_practice_button_marginRight"
+        android:layout_marginTop="@dimen/activity_practice_button_marginTop"
         android:text="submit"
         android:textStyle="bold"
         android:background="#e1d8d8"
         android:layout_below="@+id/et_input"
-        android:layout_marginTop="100dp"/>
+        />
 
 </RelativeLayout>

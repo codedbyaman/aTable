@@ -24,13 +24,95 @@
             android:layout_marginLeft="30dp"
             android:layout_marginBottom="15dp"
             android:background="@android:color/white"/>
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="40dp">
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:text="12"
+            android:textSize="29sp"
+            android:textColor="@android:color/white"
+            android:gravity="center" />
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:text="@string/multiplySign"
+            android:textSize="29sp"
+            android:gravity="center"
+            android:textColor="@android:color/white"/>
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text="10"
+                android:textSize="29sp"
+                android:textColor="@android:color/white"
+                android:gravity="center"/>
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text="@string/equalsTo"
+                android:textSize="29sp"
+                android:gravity="center"
+                android:textColor="@android:color/white"/>
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text= "@string/questionMark"
+                android:textSize="29sp"
+                android:textColor="@android:color/white"
+                android:gravity="center"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="40dp">
+            <Button
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:text="ans1"/>
+            <Button
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:text="ans2"
+                android:layout_marginLeft="5dp"/>
+            <Button
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:text="ans3"
+                android:layout_marginLeft="5dp"/>
+                <Button
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:text="ans4"
+                android:layout_marginLeft="5dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="result"
+                android:layout_gravity="center"/>
 
-    </LinearLayout>
+
+        </LinearLayout>
+
+
+
+        </LinearLayout>
+
+</RelativeLayout>
 
 
 
 
-    </RelativeLayout>
+

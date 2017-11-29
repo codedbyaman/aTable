@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <dimen name="main_screen_logo_height">160dp</dimen>
+    <dimen name="main_screen_logo_width">160dp</dimen>
+
+    <dimen name="main_screen_textsize">35sp</dimen>
+    <dimen name="main_screen_layout_marginTop">10dp</dimen>
+
+    <dimen name="main_practice_button_width">140dp</dimen>
+    <dimen name="main_practice_button_height">80dp</dimen>
+    <dimen name="main_practic_button_marginTop">30dp</dimen>
+
+
+    <dimen name="main_quiz_button_width">140dp</dimen>
+    <dimen name="main_quiz_button_height">80dp</dimen>
+    <dimen name="main_quiz_button_marginTop">30dp</dimen>
+
+    <dimen name="main_like_button_width">48dp</dimen>
+    <dimen name="main_like_button_height">48dp</dimen>
+    <dimen name="main_like_layout_marginTop">60dp</dimen>
+    <dimen name="main_like_layout_marginBottom">50dp</dimen>
+    <dimen name="main_like_layout_marginRight">20dp</dimen>
+
+    <dimen name="main_share_button_width">48dp</dimen>
+    <dimen name="main_share_button_height">48dp</dimen>
+    <dimen name="main_share_layout_marginBottom">50dp</dimen>
+    <dimen name="main_share_layout_marginRight">30dp</dimen>
+
+    <!--this is for activity_practice screen-->
+
+    <dimen name="activity_practice_edit_text_layout_height">70dp</dimen>
+    <dimen name="activity_practice_edit_text_marginTop">100dp</dimen>
+    <dimen name="activity_practice_edit_text_marginRight">90dp</dimen>
+    <dimen name="activity_practice_edit_text_marginLeft">90dp</dimen>
+    <dimen name="activity_practice_edit_text_paddingLeft">5dp</dimen>
+    <dimen name="activity_practice_edit_text_paddingRight">5dp</dimen>
+
+    <dimen name="activity_practice_button_layout_height">70dp</dimen>
+    <dimen name="activity_practice_button_marginLeft">50dp</dimen>
+    <dimen name="activity_practice_button_marginRight">50dp</dimen>
+    <dimen name="activity_practice_button_marginTop">100dp</dimen>
+
+
+    <!--this is for activity_detail screen-->
+
+    <dimen name="activity_detail_image_button_layout_width">30dp</dimen>
+    <dimen name="activity_detail_image_button_layout_height">30dp</dimen>
+
+
+    <dimen name="activity_detail_text_view_layout_height">30dp</dimen>
+    <dimen name="activity_detail_text_view_layout_marginBottom">15dp</dimen>
+    <dimen name="activity_detail_text_view_layout_marginLeft">30dp</dimen>
+    <dimen name="activity_detail_text_view_layout_marginRight">30dp</dimen>
+    <dimen name="activity_detail_text_view_layout_marginTop">20dp</dimen>
+
+    <dimen name="activity_detail_view_layout_height">1dp</dimen>
+    <dimen name="activity_detail_view_layout_marginBottom">15dp</dimen>
+    <dimen name="activity_detail_view_layout_marginLeft">30dp</dimen>
+    <dimen name="activity_detail_view_marginRight">30dp</dimen>
+
+    <dimen name="activity_detail_table_linear_layout">300dp</dimen>
+    <dimen name="activity_detail_textview_layout_height">250dp</dimen>
+    <dimen name="activity_detail_linear_layout_height">40dp</dimen>
+    <dimen name="activity_detail_image_button_layout_width_home">40dp</dimen>
+    <dimen name="activity_detail_image_button_layout_height_home">40dp</dimen>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</resources>

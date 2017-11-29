@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Table</string>
+    <string name="questionMark">\?</string>
+    <string name="equalsTo">=</string>
+    <string name="multiplySign">X</string>
 </resources>
