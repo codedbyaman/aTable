@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">Table</string>
-    <string name="questionMark">\?</string>
-    <string name="equalsTo">=</string>
-    <string name="multiplySign">X</string>
+    <string name="question_mark">\?</string>
+    <string name="equals_to">=</string>
+    <string name="multiply_sign">X</string>
+    <string name="app_icon_name">qTable</string>
 </resources>
