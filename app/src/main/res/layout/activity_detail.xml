@@ -50,9 +50,9 @@
                             android:layout_marginTop="@dimen/activity_detail_text_view_layout_marginTop"
                             android:text="TABLE OF X "
                             android:textAlignment="center"
+                            android:textAllCaps="true"
                             android:textColor="@android:color/white"
-                            android:textSize="24sp"
-                            android:textAllCaps="true"/>
+                            android:textSize="24sp" />
 
                     </RelativeLayout>
 
@@ -73,7 +73,7 @@
                         <TextView
                             android:id="@+id/tv_table_data"
                             android:layout_width="wrap_content"
-                            android:layout_height="@dimen/activity_detail_textview_layout_height"
+                            android:layout_height="wrap_content"
                             android:gravity="left"
                             android:text="Table:"
                             android:textColor="@android:color/white"
@@ -83,8 +83,8 @@
 
                     <LinearLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="@dimen/activity_detail_linear_layout_height"
-                        android:layout_gravity="bottom|center_horizontal"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_horizontal"
                         android:orientation="horizontal">
 
                         <ImageButton

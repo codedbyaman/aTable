@@ -56,7 +56,7 @@
     <dimen name="activity_detail_view_layout_marginLeft">38dp</dimen>
     <dimen name="activity_detail_view_marginRight">38dp</dimen>
 
-    <dimen name="activity_detail_table_linear_layout">375dp</dimen>
+    <dimen name="activity_detail_table_linear_layout">438dp</dimen>
     <dimen name="activity_detail_textview_layout_height">313dp</dimen>
     <dimen name="activity_detail_linear_layout_height">50dp</dimen>
 

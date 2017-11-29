@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-<!--this is for main screen-->
+    <!--this is for main screen-->
 
     <dimen name="main_screen_logo_height">128dp</dimen>
     <dimen name="main_screen_logo_width">128dp</dimen>
@@ -30,7 +30,6 @@
     <dimen name="main_share_layout_marginRight">24dp</dimen>
 
 
-
     <!--this is for activity_practice screen-->
 
     <dimen name="activity_practice_edit_text_layout_height">56dp</dimen>
@@ -50,32 +49,19 @@
     <dimen name="activity_detail_image_button_layout_width">24dp</dimen>
     <dimen name="activity_detail_image_button_layout_height">24dp</dimen>
 
-
-    <dimen name="activity_detail_text_view_layout_height">24dp</dimen>
     <dimen name="activity_detail_text_view_layout_marginBottom">12dp</dimen>
     <dimen name="activity_detail_text_view_layout_marginLeft">24dp</dimen>
     <dimen name="activity_detail_text_view_layout_marginRight">24dp</dimen>
     <dimen name="activity_detail_text_view_layout_marginTop">16dp</dimen>
 
-    <dimen name="activity_detail_view_layout_height">1dp</dimen>
     <dimen name="activity_detail_view_layout_marginBottom">12dp</dimen>
     <dimen name="activity_detail_view_layout_marginLeft">24dp</dimen>
     <dimen name="activity_detail_view_marginRight">24dp</dimen>
 
-    <dimen name="activity_detail_table_linear_layout_home">240dp</dimen>
-    <dimen name="activity_detail_textview_layout_height">200dp</dimen>
-    <dimen name="activity_detail_linear_layout_height">32dp</dimen>
+    <dimen name="activity_detail_table_linear_layout">260dp</dimen>
 
     <dimen name="activity_detail_image_button_layout_width_home">32dp</dimen>
     <dimen name="activity_detail_image_button_layout_height_home">32dp</dimen>
-
-
-
-
-
-
-
-
 
 
 </resources>

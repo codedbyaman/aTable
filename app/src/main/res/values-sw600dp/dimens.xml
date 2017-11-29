@@ -60,11 +60,8 @@
     <dimen name="activity_detail_view_layout_marginLeft">48dp</dimen>
     <dimen name="activity_detail_view_marginRight">48dp</dimen>
 
-    <dimen name="activity_detail_table_linear_layout">469dp</dimen>
+    <dimen name="activity_detail_table_linear_layout">548dp</dimen>
     <dimen name="activity_detail_textview_layout_height">391dp</dimen>
-    <dimen name="activity_detail_linear_layout_height">63dp</dimen>
-
-
     <dimen name="activity_detail_image_button_layout_width_home">63dp</dimen>
     <dimen name="activity_detail_image_button_layout_height_home">63dp</dimen>
 
