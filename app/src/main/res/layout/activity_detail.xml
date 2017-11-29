@@ -49,7 +49,7 @@
                             android:layout_marginRight="@dimen/activity_detail_text_view_layout_marginRight"
                             android:layout_marginTop="@dimen/activity_detail_text_view_layout_marginTop"
                             android:text="TABLE OF X "
-                            android:textAlignment="center"
+                            android:gravity="center"
                             android:textAllCaps="true"
                             android:textColor="@android:color/white"
                             android:textSize="24sp" />

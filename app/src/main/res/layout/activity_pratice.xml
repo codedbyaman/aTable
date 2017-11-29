@@ -23,7 +23,7 @@
         android:inputType="number"
         android:paddingLeft="@dimen/activity_practice_edit_text_paddingLeft"
         android:paddingRight="@dimen/activity_practice_edit_text_paddingRight"
-        android:textAlignment="center" />
+        android:gravity="center" />
 
     <Button
         android:id="@+id/bt_submit"
