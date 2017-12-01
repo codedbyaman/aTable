@@ -40,7 +40,7 @@
                             android:layout_alignParentStart="true"
                             android:layout_alignTop="@+id/tv_table_title"
                             android:background="@drawable/left_return_button"
-                            android:visibility="gone"/>
+                            android:visibility="gone" />
 
                         <TextView
                             android:id="@+id/tv_table_title"
@@ -53,7 +53,7 @@
                             android:gravity="center"
                             android:text="TABLE OF X "
                             android:textAllCaps="true"
-                            android:textColor="@android:color/white"
+                            android:textColor="@color/colorMain"
                             android:textSize="24sp" />
 
                     </RelativeLayout>
@@ -78,7 +78,8 @@
                             android:layout_height="wrap_content"
                             android:gravity="left"
                             android:text="Table:"
-                            android:textColor="@android:color/white"
+
+                            android:textColor="@color/colorMain"
                             android:textSize="20sp" />
 
                     </LinearLayout>

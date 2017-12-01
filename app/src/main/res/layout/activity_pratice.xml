@@ -33,8 +33,8 @@
         android:layout_marginLeft="@dimen/activity_practice_button_marginLeft"
         android:layout_marginRight="@dimen/activity_practice_button_marginRight"
         android:layout_marginTop="@dimen/activity_practice_button_marginTop"
-        android:background="#e1d8d8"
+        android:background="@drawable/button_shape"
         android:text="submit"
-        android:textStyle="bold" />
+        android:textStyle="bold"/>
 
 </RelativeLayout>

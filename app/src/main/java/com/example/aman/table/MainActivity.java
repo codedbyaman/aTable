@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import java.util.Random;
+
 
 public class MainActivity extends AppCompatActivity{
     @Override
@@ -34,6 +36,7 @@ public class MainActivity extends AppCompatActivity{
                 Intent intent = new Intent(MainActivity.this, ActivityQuiz.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slidein, R.anim.slideout);
+
 
             }
         });
