@@ -28,9 +28,10 @@
             android:layout_marginTop="@dimen/main_screen_layout_marginTop"
             android:gravity="center"
             android:text="Math Tables"
-            android:textColor="#ffffff"
+            android:fontFamily="@"
+            android:textColor="@color/colorMain"
             android:textSize="@dimen/main_screen_textsize"
-            android:textStyle="bold" />
+            android:textStyle="bold"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -42,17 +43,20 @@
                 android:id="@+id/bt_practice"
                 android:layout_width="@dimen/main_practice_button_width"
                 android:layout_height="@dimen/main_practice_button_height"
+                android:layout_marginHorizontal="10dp"
                 android:layout_marginTop="@dimen/main_practic_button_marginTop"
+                android:background="@drawable/button_shape"
                 android:text="practice"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/bt_quiz"
                 android:layout_width="@dimen/main_quiz_button_width"
                 android:layout_height="@dimen/main_quiz_button_height"
                 android:layout_marginTop="@dimen/main_quiz_button_marginTop"
+                android:background="@drawable/button_shape"
                 android:text="quiz"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
