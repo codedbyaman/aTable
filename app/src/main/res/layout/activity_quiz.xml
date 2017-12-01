@@ -14,7 +14,7 @@
             android:layout_height="40dp"
             android:text="Quiz"
             android:textAlignment="center"
-            android:textColor="#ffffff"
+            android:textColor="@color/colorMain"
             android:textSize="30sp"
             android:textStyle="bold" />
         <View
@@ -39,7 +39,7 @@
                 android:gravity="center"
                 android:text="12"
                 android:textColor="@android:color/white"
-                android:textSize="29sp" />
+                android:textSize="29sp"/>
 
             <TextView
                 android:layout_width="50dp"
@@ -82,17 +82,19 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/tv_ans1"
+                android:id="@+id/bt_ans1"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:text="ans1" />
+                android:text="ans1"
+                android:background="@drawable/button_shape"/>
 
             <Button
-                android:id="@+id/tv_answer2"
+                android:id="@+id/bt_ans2"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_marginLeft="40dp"
-                android:text="ans2" />
+                android:text="ans2"
+                android:background="@drawable/button_shape"/>
 
         </LinearLayout>
         <LinearLayout
@@ -103,17 +105,19 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/tv_answer3"
+                android:id="@+id/bt_ans3"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:text="ans3" />
+                android:text="ans3"
+                android:background="@drawable/button_shape"/>
 
             <Button
-                android:id="@+id/tv_answer4"
+                android:id="@+id/bt_ans4"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_marginLeft="40dp"
-                android:text="ans4" />
+                android:text="ans4"
+                android:background="@drawable/button_shape"/>
 
         </LinearLayout>
     </LinearLayout>
