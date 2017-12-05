@@ -21,9 +21,10 @@
         android:background="@drawable/edit_text_bg"
         android:hint="Input Number"
         android:inputType="number"
+        android:textSize="@dimen/activity_practice_edit_text_size"
         android:paddingLeft="@dimen/activity_practice_edit_text_paddingLeft"
         android:paddingRight="@dimen/activity_practice_edit_text_paddingRight"
-        android:gravity="center" />
+        android:gravity="center"/>
 
     <Button
         android:id="@+id/bt_submit"
@@ -35,6 +36,7 @@
         android:layout_marginTop="@dimen/activity_practice_button_marginTop"
         android:background="@drawable/button_shape"
         android:text="submit"
+        android:textSize="@dimen/activity_practice_submit_button_textsize"
         android:textStyle="bold"/>
 
 </RelativeLayout>

@@ -86,6 +86,7 @@
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:text="ans1"
+                android:textSize="16sp"
                 android:background="@drawable/button_shape"/>
 
             <Button
@@ -94,6 +95,7 @@
                 android:layout_height="60dp"
                 android:layout_marginLeft="40dp"
                 android:text="ans2"
+                android:textSize="16sp"
                 android:background="@drawable/button_shape"/>
 
         </LinearLayout>
@@ -109,6 +111,7 @@
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:text="ans3"
+                android:textSize="16sp"
                 android:background="@drawable/button_shape"/>
 
             <Button
@@ -117,6 +120,7 @@
                 android:layout_height="60dp"
                 android:layout_marginLeft="40dp"
                 android:text="ans4"
+                android:textSize="16sp"
                 android:background="@drawable/button_shape"/>
 
         </LinearLayout>

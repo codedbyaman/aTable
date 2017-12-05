@@ -54,7 +54,7 @@
                             android:text="TABLE OF X "
                             android:textAllCaps="true"
                             android:textColor="@color/colorMain"
-                            android:textSize="24sp" />
+                            android:textSize="@dimen/activity_detail_text_view_heading_textsize" />
 
                     </RelativeLayout>
 
@@ -78,9 +78,8 @@
                             android:layout_height="wrap_content"
                             android:gravity="left"
                             android:text="Table:"
-
                             android:textColor="@color/colorMain"
-                            android:textSize="20sp" />
+                            android:textSize="@dimen/activity_detail_text_view_textsize" />
 
                     </LinearLayout>
 

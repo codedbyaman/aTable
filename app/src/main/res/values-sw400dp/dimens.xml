@@ -9,10 +9,14 @@
     <dimen name="main_practice_button_height">100dp</dimen>
     <dimen name="main_practice_button_width">175dp</dimen>
     <dimen name="main_practic_button_marginTop">38dp</dimen>
+    <dimen name="main_practice_button_textsize">22sp</dimen>
+
 
     <dimen name="main_quiz_button_width">175dp</dimen>
     <dimen name="main_quiz_button_height">100dp</dimen>
     <dimen name="main_quiz_button_marginTop">38dp</dimen>
+    <dimen name="main_quiz_button_textsize">22sp</dimen>
+
 
     <dimen name="main_like_button_width">60dp</dimen>
     <dimen name="main_like_button_height">60dp</dimen>
@@ -33,11 +37,15 @@
     <dimen name="activity_practice_edit_text_marginLeft">113dp</dimen>
     <dimen name="activity_practice_edit_text_paddingLeft">7dp</dimen>
     <dimen name="activity_practice_edit_text_paddingRight">7dp</dimen>
+    <dimen name="activity_practice_edit_text_size">22sp</dimen>
+
 
     <dimen name="activity_practice_button_layout_height">88dp</dimen>
     <dimen name="activity_practice_button_marginLeft">63dp</dimen>
     <dimen name="activity_practice_button_marginRight">63dp</dimen>
     <dimen name="activity_practice_button_marginTop">125dp</dimen>
+    <dimen name="activity_practice_submit_button_textsize">22sp</dimen>
+
 
     <!--this is for activity_detail screen-->
 
@@ -50,6 +58,8 @@
     <dimen name="activity_detail_text_view_layout_marginLeft">38dp</dimen>
     <dimen name="activity_detail_text_view_layout_marginRight">38dp</dimen>
     <dimen name="activity_detail_text_view_layout_marginTop">25dp</dimen>
+    <dimen name="activity_detail_text_view_heading_textsize">36sp</dimen>
+
 
     <dimen name="activity_detail_view_layout_height">1dp</dimen>
     <dimen name="activity_detail_view_layout_marginBottom">19dp</dimen>
@@ -63,16 +73,7 @@
 
     <dimen name="activity_detail_image_button_layout_width_home">50dp</dimen>
     <dimen name="activity_detail_image_button_layout_height_home">50dp</dimen>
-
-
-
-
-
-
-
-
-
-
+    <dimen name="activity_detail_text_view_textsize">33sp</dimen>
 
 
 

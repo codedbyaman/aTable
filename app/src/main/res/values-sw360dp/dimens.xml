@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-
+    <!--this is for activity_main screen-->
     <dimen name="main_screen_logo_height">160dp</dimen>
     <dimen name="main_screen_logo_width">160dp</dimen>
 
@@ -11,17 +11,21 @@
     <dimen name="main_practice_button_width">140dp</dimen>
     <dimen name="main_practice_button_height">80dp</dimen>
     <dimen name="main_practic_button_marginTop">30dp</dimen>
+    <dimen name="main_practice_button_textsize">16sp</dimen>
 
 
     <dimen name="main_quiz_button_width">140dp</dimen>
     <dimen name="main_quiz_button_height">80dp</dimen>
     <dimen name="main_quiz_button_marginTop">30dp</dimen>
+    <dimen name="main_quiz_button_textsize">16sp</dimen>
+
 
     <dimen name="main_like_button_width">48dp</dimen>
     <dimen name="main_like_button_height">48dp</dimen>
     <dimen name="main_like_layout_marginTop">60dp</dimen>
     <dimen name="main_like_layout_marginBottom">50dp</dimen>
     <dimen name="main_like_layout_marginRight">20dp</dimen>
+
 
     <dimen name="main_share_button_width">48dp</dimen>
     <dimen name="main_share_button_height">48dp</dimen>
@@ -36,11 +40,14 @@
     <dimen name="activity_practice_edit_text_marginLeft">90dp</dimen>
     <dimen name="activity_practice_edit_text_paddingLeft">5dp</dimen>
     <dimen name="activity_practice_edit_text_paddingRight">5dp</dimen>
+    <dimen name="activity_practice_edit_text_size">16sp</dimen>
+
 
     <dimen name="activity_practice_button_layout_height">70dp</dimen>
     <dimen name="activity_practice_button_marginLeft">50dp</dimen>
     <dimen name="activity_practice_button_marginRight">50dp</dimen>
     <dimen name="activity_practice_button_marginTop">100dp</dimen>
+    <dimen name="activity_practice_submit_button_textsize">16sp</dimen>
 
 
     <!--this is for activity_detail screen-->
@@ -54,6 +61,8 @@
     <dimen name="activity_detail_text_view_layout_marginLeft">30dp</dimen>
     <dimen name="activity_detail_text_view_layout_marginRight">30dp</dimen>
     <dimen name="activity_detail_text_view_layout_marginTop">20dp</dimen>
+    <dimen name="activity_detail_text_view_heading_textsize">28sp</dimen>
+
 
     <dimen name="activity_detail_view_layout_height">1dp</dimen>
     <dimen name="activity_detail_view_layout_marginBottom">15dp</dimen>
@@ -65,26 +74,7 @@
     <dimen name="activity_detail_linear_layout_height">40dp</dimen>
     <dimen name="activity_detail_image_button_layout_width_home">40dp</dimen>
     <dimen name="activity_detail_image_button_layout_height_home">40dp</dimen>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <dimen name="activity_detail_text_view_textsize">23sp</dimen>
 
 
 </resources>

@@ -28,7 +28,6 @@
             android:layout_marginTop="@dimen/main_screen_layout_marginTop"
             android:gravity="center"
             android:text="Math Tables"
-            android:fontFamily="@"
             android:textColor="@color/colorMain"
             android:textSize="@dimen/main_screen_textsize"
             android:textStyle="bold"/>
@@ -47,6 +46,7 @@
                 android:layout_marginTop="@dimen/main_practic_button_marginTop"
                 android:background="@drawable/button_shape"
                 android:text="practice"
+                android:textSize="@dimen/main_practice_button_textsize"
                 android:textStyle="bold" />
 
             <Button
@@ -56,6 +56,7 @@
                 android:layout_marginTop="@dimen/main_quiz_button_marginTop"
                 android:background="@drawable/button_shape"
                 android:text="quiz"
+                android:textSize="@dimen/main_quiz_button_textsize"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -68,16 +69,16 @@
             <ImageButton
                 android:layout_width="@dimen/main_like_button_width"
                 android:layout_height="@dimen/main_like_button_height"
-                android:layout_marginBottom="50dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="60dp"
+                android:layout_marginBottom="@dimen/main_like_layout_marginBottom"
+                android:layout_marginRight="@dimen/main_like_layout_marginRight"
+                android:layout_marginTop="@dimen/main_like_layout_marginTop"
                 android:background="@drawable/hand_like_button" />
 
             <ImageButton
                 android:layout_width="@dimen/main_share_button_width"
                 android:layout_height="@dimen/main_share_button_height"
-                android:layout_marginBottom="50dp"
-                android:layout_marginRight="30dp"
+                android:layout_marginBottom="@dimen/main_share_layout_marginBottom"
+                android:layout_marginRight="@dimen/main_share_layout_marginRight"
                 android:background="@drawable/share_icon" />
         </LinearLayout>
     </LinearLayout>

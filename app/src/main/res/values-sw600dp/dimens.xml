@@ -12,10 +12,14 @@
     <dimen name="main_practice_button_height">125dp</dimen>
     <dimen name="main_practice_button_width">219dp</dimen>
     <dimen name="main_practic_button_marginTop">48dp</dimen>
+    <dimen name="main_practice_button_textsize">31sp</dimen>
+
 
     <dimen name="main_quiz_button_width">220dp</dimen>
     <dimen name="main_quiz_button_height">125dp</dimen>
     <dimen name="main_quiz_button_marginTop">48dp</dimen>
+    <dimen name="main_quiz_button_textsize">31sp</dimen>
+
 
     <dimen name="main_like_button_width">75dp</dimen>
     <dimen name="main_like_button_height">75dp</dimen>
@@ -37,11 +41,15 @@
     <dimen name="activity_practice_edit_text_marginLeft">141dp</dimen>
     <dimen name="activity_practice_edit_text_paddingLeft">9dp</dimen>
     <dimen name="activity_practice_edit_text_paddingRight">9dp</dimen>
+    <dimen name="activity_practice_edit_text_size">31sp</dimen>
+
 
     <dimen name="activity_practice_button_layout_height">110dp</dimen>
     <dimen name="activity_practice_button_marginLeft">79dp</dimen>
     <dimen name="activity_practice_button_marginRight">79dp</dimen>
     <dimen name="activity_practice_button_marginTop">156dp</dimen>
+    <dimen name="activity_practice_submit_button_textsize">31sp</dimen>
+
 
     <!--this is for activity_detail screen-->
 
@@ -54,6 +62,8 @@
     <dimen name="activity_detail_text_view_layout_marginLeft">48dp</dimen>
     <dimen name="activity_detail_text_view_layout_marginRight">48dp</dimen>
     <dimen name="activity_detail_text_view_layout_marginTop">31dp</dimen>
+    <dimen name="activity_detail_text_view_heading_textsize">53sp</dimen>
+
 
     <dimen name="activity_detail_view_layout_height">1dp</dimen>
     <dimen name="activity_detail_view_layout_marginBottom">24dp</dimen>
@@ -64,6 +74,8 @@
     <dimen name="activity_detail_textview_layout_height">391dp</dimen>
     <dimen name="activity_detail_image_button_layout_width_home">63dp</dimen>
     <dimen name="activity_detail_image_button_layout_height_home">63dp</dimen>
+    <dimen name="activity_detail_text_view_textsize">49sp</dimen>
+
 
 
 
