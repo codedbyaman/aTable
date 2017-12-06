@@ -59,7 +59,7 @@
     <dimen name="activity_detail_text_view_layout_marginLeft">24dp</dimen>
     <dimen name="activity_detail_text_view_layout_marginRight">24dp</dimen>
     <dimen name="activity_detail_text_view_layout_marginTop">16dp</dimen>
-    <dimen name="activity_detail_text_view_heading_textsize">19sp</dimen>
+    <dimen name="activity_detail_text_view_heading_textsize">22sp</dimen>
 
 
     <dimen name="activity_detail_view_layout_height">1dp</dimen>
@@ -73,7 +73,7 @@
 
     <dimen name="activity_detail_image_button_layout_width_home">32dp</dimen>
     <dimen name="activity_detail_image_button_layout_height_home">32dp</dimen>
-    <dimen name="activity_detail_text_view_textsize">15sp</dimen>
+    <dimen name="activity_detail_text_view_textsize">18sp</dimen>
 
 
 </resources>

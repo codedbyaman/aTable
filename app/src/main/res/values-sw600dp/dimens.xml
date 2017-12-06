@@ -74,7 +74,7 @@
     <dimen name="activity_detail_textview_layout_height">391dp</dimen>
     <dimen name="activity_detail_image_button_layout_width_home">63dp</dimen>
     <dimen name="activity_detail_image_button_layout_height_home">63dp</dimen>
-    <dimen name="activity_detail_text_view_textsize">49sp</dimen>
+    <dimen name="activity_detail_text_view_textsize">40sp</dimen>
 
 
 

@@ -9,96 +9,91 @@
         android:orientation="vertical">
 
 
-        <android.support.v7.widget.CardView
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <RelativeLayout
+            <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/background_greenboard" />
 
-                <ImageView
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/background_greenboard" />
+                    android:layout_height="wrap_content">
+
+                    <ImageButton
+                        android:id="@+id/bt_return"
+                        android:layout_width="@dimen/activity_detail_image_button_layout_width"
+                        android:layout_height="@dimen/activity_detail_image_button_layout_height"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignTop="@+id/tv_table_title"
+                        android:background="@drawable/left_return_button"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/tv_table_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/activity_detail_text_view_layout_marginBottom"
+                        android:layout_marginLeft="@dimen/activity_detail_text_view_layout_marginLeft"
+                        android:layout_marginRight="@dimen/activity_detail_text_view_layout_marginRight"
+                        android:layout_marginTop="@dimen/activity_detail_text_view_layout_marginTop"
+                        android:gravity="center"
+                        android:text="TABLE OF X "
+                        android:textAllCaps="true"
+                        android:textColor="@color/colorMain"
+                        android:textSize="@dimen/activity_detail_text_view_heading_textsize" />
+
+                </RelativeLayout>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="@dimen/activity_detail_view_layout_marginBottom"
+                    android:layout_marginLeft="@dimen/activity_detail_view_layout_marginLeft"
+                    android:layout_marginRight="@dimen/activity_detail_view_marginRight"
+                    android:background="@android:color/white" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    android:layout_height="@dimen/activity_detail_table_linear_layout"
+                    android:gravity="center">
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <ImageButton
-                            android:id="@+id/bt_return"
-                            android:layout_width="@dimen/activity_detail_image_button_layout_width"
-                            android:layout_height="@dimen/activity_detail_image_button_layout_height"
-                            android:layout_alignParentLeft="true"
-                            android:layout_alignParentStart="true"
-                            android:layout_alignTop="@+id/tv_table_title"
-                            android:background="@drawable/left_return_button"
-                            android:visibility="gone" />
-
-                        <TextView
-                            android:id="@+id/tv_table_title"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="@dimen/activity_detail_text_view_layout_marginBottom"
-                            android:layout_marginLeft="@dimen/activity_detail_text_view_layout_marginLeft"
-                            android:layout_marginRight="@dimen/activity_detail_text_view_layout_marginRight"
-                            android:layout_marginTop="@dimen/activity_detail_text_view_layout_marginTop"
-                            android:gravity="center"
-                            android:text="TABLE OF X "
-                            android:textAllCaps="true"
-                            android:textColor="@color/colorMain"
-                            android:textSize="@dimen/activity_detail_text_view_heading_textsize" />
-
-                    </RelativeLayout>
-
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginBottom="@dimen/activity_detail_view_layout_marginBottom"
-                        android:layout_marginLeft="@dimen/activity_detail_view_layout_marginLeft"
-                        android:layout_marginRight="@dimen/activity_detail_view_marginRight"
-                        android:background="@android:color/white" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/activity_detail_table_linear_layout"
-                        android:gravity="center">
-
-                        <TextView
-                            android:id="@+id/tv_table_data"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="left"
-                            android:text="Table:"
-                            android:textColor="@color/colorMain"
-                            android:textSize="@dimen/activity_detail_text_view_textsize" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
+                    <TextView
+                        android:id="@+id/tv_table_data"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center_horizontal"
-                        android:orientation="horizontal">
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:text="Table:"
+                        android:textColor="@color/colorMain"
+                        android:textSize="@dimen/activity_detail_text_view_textsize" />
 
-                        <ImageButton
-                            android:id="@+id/bt_home"
-                            android:layout_width="@dimen/activity_detail_image_button_layout_width_home"
-                            android:layout_height="@dimen/activity_detail_image_button_layout_height_home"
-                            android:background="@drawable/home_icon" />
-
-                    </LinearLayout>
                 </LinearLayout>
-            </RelativeLayout>
-        </android.support.v7.widget.CardView>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:id="@+id/bt_home"
+                        android:layout_width="@dimen/activity_detail_image_button_layout_width_home"
+                        android:layout_height="@dimen/activity_detail_image_button_layout_height_home"
+                        android:background="@drawable/home_icon" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
 
     </LinearLayout>
 </LinearLayout>
