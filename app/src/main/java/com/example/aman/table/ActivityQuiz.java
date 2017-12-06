@@ -17,18 +17,21 @@ import java.util.Random;
 
 public class ActivityQuiz extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
 
         Button btAns1 = (findViewById(R.id.bt_ans1));
-        Button btAns2 = (findViewById(R.id.bt_ans2));
+        final Button btAns2 = (findViewById(R.id.bt_ans2));
         Button btAns3 = (findViewById(R.id.bt_ans3));
         Button btAns4 = (findViewById(R.id.bt_ans4));
+        final TextView tvAnswer = (findViewById(R.id.tv_answer));
 
         final TextView tvNumber1 = (findViewById(R.id.tv_number1));
         TextView tvNumber2 = (findViewById(R.id.tv_number2));
+
 
         Random random = new Random();
         int number1 = random.nextInt(21) + 1;
@@ -39,41 +42,66 @@ public class ActivityQuiz extends AppCompatActivity {
 
         int number3 = random.nextInt(4) + 1;
 
+        final int correctanswer;
+
+        correctanswer = number1 * number2;
+
+
         if (number3 == 1) {
-            btAns1.setText(Integer.toString(number1 * number2));
-            btAns2.setText(Integer.toString(number1 * number2 +4));
-            btAns3.setText(Integer.toString(number1 * number2 +6));
-            btAns4.setText(Integer.toString(number1 * number2 +8));
+            btAns1.setText(Integer.toString(correctanswer));
+            btAns2.setText(Integer.toString(correctanswer + 2));
+            btAns3.setText(Integer.toString(correctanswer + 4));
+            btAns4.setText(Integer.toString(correctanswer + 6));
+
 
         } else if (number3 == 2) {
-            btAns2.setText(Integer.toString(number1 * number2));
-            btAns1.setText(Integer.toString(number1 * number2 +4));
-            btAns3.setText(Integer.toString(number1 * number2 +6));
-            btAns4.setText(Integer.toString(number1 * number2 +8));
+            btAns2.setText(Integer.toString(correctanswer));
+            btAns1.setText(Integer.toString(correctanswer + 2));
+            btAns3.setText(Integer.toString(correctanswer + 4));
+            btAns4.setText(Integer.toString(correctanswer + 6));
 
 
         } else if (number3 == 3) {
-            btAns3.setText(Integer.toString(number1 * number2));
-            btAns2.setText(Integer.toString(number1 * number2 +4));
-            btAns1.setText(Integer.toString(number1 * number2 +6));
-            btAns4.setText(Integer.toString(number1 * number2 +8));
-
+            btAns3.setText(Integer.toString(correctanswer));
+            btAns2.setText(Integer.toString(correctanswer + 2));
+            btAns1.setText(Integer.toString(correctanswer + 4));
+            btAns4.setText(Integer.toString(correctanswer + 6));
 
 
         } else if (number3 == 4) {
-            btAns4.setText(Integer.toString(number1 * number2));
-            btAns2.setText(Integer.toString(number1 * number2 +4));
-            btAns3.setText(Integer.toString(number1 * number2 +6));
-            btAns1.setText(Integer.toString(number1 * number2 +8));}
+            btAns4.setText(Integer.toString(correctanswer));
+            btAns2.setText(Integer.toString(correctanswer + 2));
+            btAns3.setText(Integer.toString(correctanswer + 4));
+            btAns1.setText(Integer.toString(correctanswer + 6));
 
-
-            btAns1.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-
-
-                }
-            });
 
         }
+        btAns1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               tvAnswer.setText(Integer.toString(correctanswer));
+
+            }
+
+        });
+        btAns2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tvAnswer.setText(Integer.toString(correctanswer));
+            }
+        });
+
+        btAns3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tvAnswer.setText(Integer.toString(correctanswer));
+            }
+        });
+        btAns4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tvAnswer.setText(Integer.toString(correctanswer));
+            }
+        });
     }
+}
