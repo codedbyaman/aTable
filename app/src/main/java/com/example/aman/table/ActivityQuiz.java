@@ -87,9 +87,10 @@ public class ActivityQuiz extends AppCompatActivity {
             public void onClick(View v) {
                 tvAnswer.setText(Integer.toString(correctanswer));
                 if (btAns1.getText().toString().equals(Integer.toString(correctanswer))) {
-                    Toast.makeText(ActivityQuiz.this, "Correct answer", Toast.LENGTH_SHORT).show();
+                    Snackbar.make(btAns1, "Correct Answer", Snackbar.LENGTH_SHORT).show();
+
                 } else {
-                    Toast.makeText(ActivityQuiz.this, "Wrong Answer", Toast.LENGTH_SHORT).show();
+                    Snackbar.make(btAns1, "Wrong Answer", Snackbar.LENGTH_SHORT).show();
                 }
             }
 
@@ -99,9 +100,9 @@ public class ActivityQuiz extends AppCompatActivity {
             public void onClick(View v) {
                 tvAnswer.setText(Integer.toString(correctanswer));
                 if (btAns2.getText().toString().equals(Integer.toString(correctanswer))) {
-                    Toast.makeText(ActivityQuiz.this, "Correct Answer", Toast.LENGTH_SHORT).show();
+                    Snackbar.make(btAns2, "Correct Answer", Snackbar.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(ActivityQuiz.this, "Wrong Answer", Toast.LENGTH_SHORT).show();
+                    Snackbar.make(btAns2, "Wrong Answer", Snackbar.LENGTH_SHORT).show();
                 }
 
             }
@@ -115,12 +116,8 @@ public class ActivityQuiz extends AppCompatActivity {
                     Snackbar.make(btAns3, "Correct Answer", Snackbar.LENGTH_SHORT).show();
 
                 } else {
-                    Snackbar.make(btAns3,"Wrong Answer", Snackbar.LENGTH_SHORT).show();
-
-
+                    Snackbar.make(btAns3, "Wrong Answer", Snackbar.LENGTH_SHORT).show();
                 }
-
-
             }
         });
         btAns4.setOnClickListener(new View.OnClickListener() {
@@ -128,9 +125,10 @@ public class ActivityQuiz extends AppCompatActivity {
             public void onClick(View v) {
                 tvAnswer.setText(Integer.toString(correctanswer));
                 if (btAns4.getText().toString().equals(Integer.toString(correctanswer))) {
-                    Toast.makeText(ActivityQuiz.this, "Correct Answer", Toast.LENGTH_SHORT).show();
+                    Snackbar.make(btAns4, "Correct Answer", Snackbar.LENGTH_SHORT).show();
+
                 } else {
-                    Toast.makeText(ActivityQuiz.this, "Wrong Answer", Toast.LENGTH_SHORT).show();
+                    Snackbar.make(btAns4, "Wrong Answer", Snackbar.LENGTH_SHORT).show();
                 }
 
             }
