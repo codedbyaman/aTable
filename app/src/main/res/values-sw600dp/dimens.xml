@@ -24,7 +24,7 @@
     <dimen name="main_like_button_width">75dp</dimen>
     <dimen name="main_like_button_height">75dp</dimen>
     <dimen name="main_like_layout_marginTop">75dp</dimen>
-    <dimen name="main_like_layout_marginBottom">63dp</dimen>
+    <dimen name="main_like_layout_marginBottom">79dp</dimen>
     <dimen name="main_like_layout_marginRight">20dp</dimen>
 
 

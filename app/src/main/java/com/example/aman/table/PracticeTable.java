@@ -34,7 +34,7 @@ public class PracticeTable extends AppCompatActivity {
                     return;
                 }
 
-                if (numberText.length()>4){
+                if (numberText.length() > 4) {
                     Toast.makeText(PracticeTable.this, "Please enter a number less than 10000", Toast.LENGTH_SHORT).show();
                     return;
                 }
