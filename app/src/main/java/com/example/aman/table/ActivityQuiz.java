@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.BaseTransientBottomBar;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -30,15 +31,21 @@ public class ActivityQuiz extends AppCompatActivity {
 
         setContentView(R.layout.activity_quiz);
 
+
         final Button btAns1 = (findViewById(R.id.bt_ans1));
         final Button btAns2 = (findViewById(R.id.bt_ans2));
         final Button btAns3 = (findViewById(R.id.bt_ans3));
         final Button btAns4 = (findViewById(R.id.bt_ans4));
+
         final ImageButton imbNext = (findViewById(R.id.next_button));
         final TextView tvAnswer = (findViewById(R.id.tv_answer));
 
         final TextView tvNumber1 = (findViewById(R.id.tv_number1));
         final TextView tvNumber2 = (findViewById(R.id.tv_number2));
+
+        final TextView toolbartext = (findViewById(R.id.toolbar_text));
+
+        toolbartext.setText("0/10");
 
 
         final int number1 = random.nextInt(21) + 1;
@@ -89,8 +96,10 @@ public class ActivityQuiz extends AppCompatActivity {
                 if (btAns1.getText().toString().equals(Integer.toString(correctanswer))) {
                     Snackbar.make(btAns1, "Correct Answer", Snackbar.LENGTH_SHORT).show();
 
+
                 } else {
                     Snackbar.make(btAns1, "Wrong Answer", Snackbar.LENGTH_SHORT).show();
+                    toolbartext.setText("test");
                 }
             }
 
@@ -140,6 +149,7 @@ public class ActivityQuiz extends AppCompatActivity {
 
 //                Toast.makeText(ActivityQuiz.this, "Next Question", Toast.LENGTH_SHORT).show();
 
+
                 int number1 = random.nextInt(20) + 1;
                 tvNumber1.setText("" + number1);
 
@@ -151,6 +161,7 @@ public class ActivityQuiz extends AppCompatActivity {
                 int number4 = random.nextInt(4) + 1;
 
                 tvAnswer.setText("?");
+
 
 
                 if (number4 == 1) {
@@ -184,5 +195,6 @@ public class ActivityQuiz extends AppCompatActivity {
 
             }
         });
+
     }
 }

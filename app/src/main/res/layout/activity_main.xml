@@ -7,7 +7,8 @@
     tools:context=".MainActivity">
     <include
         android:id="@+id/tool_bar"
-        layout="@layout/tool_bar"/>
+        layout="@layout/tool_bar"
+        />
 
 <RelativeLayout
 
@@ -79,6 +80,7 @@
             android:orientation="horizontal">
 
             <ImageButton
+                android:id="@+id/like_button"
                 android:layout_width="@dimen/main_like_button_width"
                 android:layout_height="@dimen/main_like_button_height"
                 android:layout_marginBottom="@dimen/main_like_layout_marginBottom"
@@ -87,6 +89,7 @@
                 android:background="@drawable/hand_like_button" />
 
             <ImageButton
+                android:id="@+id/share_button"
                 android:layout_width="@dimen/main_share_button_width"
                 android:layout_height="@dimen/main_share_button_height"
                 android:layout_marginBottom="@dimen/main_share_layout_marginBottom"
