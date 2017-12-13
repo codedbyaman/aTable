@@ -61,12 +61,13 @@ public class PracticeTable extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                overridePendingTransition(R.anim.slidein_back, R.anim.slideout_back);
+                overridePendingTransition(R.anim.slideout_back, R.anim.slidein_back);
             }
         });
 
         TextView textView = findViewById(R.id.toolbar_text);
         textView.setVisibility(View.GONE);
+
 
     }
 }

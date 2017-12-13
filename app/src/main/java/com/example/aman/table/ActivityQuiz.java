@@ -205,7 +205,7 @@ public class ActivityQuiz extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                overridePendingTransition(R.anim.slidein_back, R.anim.slideout_back);
+                overridePendingTransition(R.anim.slideout_back, R.anim.slidein_back);
 
             }
         });
