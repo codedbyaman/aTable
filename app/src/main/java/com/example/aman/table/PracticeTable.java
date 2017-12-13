@@ -7,7 +7,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
+import android.support.v7.widget.Toolbar;
 
 /**
  * Created by aman on 21/11/17.
@@ -50,5 +52,21 @@ public class PracticeTable extends AppCompatActivity {
             }
 
         });
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                overridePendingTransition(R.anim.slidein_back, R.anim.slideout_back);
+            }
+        });
+
+        TextView textView = findViewById(R.id.toolbar_text);
+        textView.setVisibility(View.GONE);
+
     }
 }
