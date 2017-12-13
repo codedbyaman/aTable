@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toolbar;
+import android.support.v7.widget.Toolbar;
 
 import java.util.Random;
 
@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         Button btQuiz = (findViewById(R.id.bt_quiz));
         ImageButton shareButton = (findViewById(R.id.share_button));
         ImageButton likeButton = (findViewById(R.id.like_button));
+
 
         btPractice.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,13 +68,22 @@ public class MainActivity extends AppCompatActivity {
                 likeIntent.setData(Uri.parse("https://play.google.com/store/apps/details?id=com.example.aman.table"));
                 startActivity(likeIntent);
 
+
             }
         });
+
 
 
 
         TextView textView = findViewById(R.id.toolbar_text);
         textView.setVisibility(View.GONE);
 
+        Toolbar toolbar =(Toolbar)findViewById(R.id.tool_bar);
+        setSupportActionBar(toolbar);
+         getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+
+
     }
+
 }

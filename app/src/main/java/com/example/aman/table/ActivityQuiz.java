@@ -33,7 +33,6 @@ public class ActivityQuiz extends AppCompatActivity {
         setContentView(R.layout.activity_quiz);
 
 
-
         final Button btAns1 = (findViewById(R.id.bt_ans1));
         final Button btAns2 = (findViewById(R.id.bt_ans2));
         final Button btAns3 = (findViewById(R.id.bt_ans3));
@@ -49,13 +48,11 @@ public class ActivityQuiz extends AppCompatActivity {
 
         toolbartext.setText("0/10");
 
-        Toolbar toolbar = (Toolbar)findViewById(R.id.tool_bar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
-
-
 
 
         final int number1 = random.nextInt(21) + 1;
@@ -173,7 +170,6 @@ public class ActivityQuiz extends AppCompatActivity {
                 tvAnswer.setText("?");
 
 
-
                 if (number4 == 1) {
                     btAns1.setText(Integer.toString(correctanswer));
                     btAns2.setText(Integer.toString(correctanswer + 2));
@@ -208,16 +204,11 @@ public class ActivityQuiz extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
                 overridePendingTransition(R.anim.slidein_back, R.anim.slideout_back);
 
             }
         });
-
-
-
-
-
 
 
     }
