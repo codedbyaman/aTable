@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
+import android.os.Bundle;
 
 import org.w3c.dom.Text;
 
@@ -23,12 +23,14 @@ import java.util.Random;
 
 public class ActivityQuiz extends AppCompatActivity {
 
+
     int correctanswer;
     Random random = new Random();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
 
         setContentView(R.layout.activity_quiz);
 
@@ -106,7 +108,6 @@ public class ActivityQuiz extends AppCompatActivity {
 
                 } else {
                     Snackbar.make(btAns1, "Wrong Answer", Snackbar.LENGTH_SHORT).show();
-                    toolbartext.setText("test");
                 }
             }
 
@@ -212,4 +213,7 @@ public class ActivityQuiz extends AppCompatActivity {
 
 
     }
+
+
 }
+

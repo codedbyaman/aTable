@@ -80,32 +80,33 @@
 
     <!--this is for activity_quiz screen-->
 
-    <dimen name="activity_quiz_text_view_layout_height">50dp</dimen>
-    <dimen name="activity_quiz_text_view_textsize">38sp</dimen>
-    <dimen name="activity_quiz_text_view_layout_marginTop">12dp</dimen>
+
+    <dimen name="activity_quiz_text_view_layout_height">63dp</dimen>
+    <dimen name="activity_quiz_text_view_textsize">48sp</dimen>
+    <dimen name="activity_quiz_text_view_layout_marginTop">15dp</dimen>
 
     <dimen name="activity_quiz_view_layout_height">1dp</dimen>
-    <dimen name="activity_quiz_view_layout_marginBottom">19dp</dimen>
-    <dimen name="activity_quiz_view_layout_marginLeft">38dp</dimen>
-    <dimen name="activity_quiz_view_layout_marginRight">38dp</dimen>
-    <dimen name="activity_quiz_view_layout_marginTop">25dp</dimen>
+    <dimen name="activity_quiz_view_layout_marginBottom">24dp</dimen>
+    <dimen name="activity_quiz_view_layout_marginLeft">48dp</dimen>
+    <dimen name="activity_quiz_view_layout_marginRight">48dp</dimen>
+    <dimen name="activity_quiz_view_layout_marginTop">31dp</dimen>
 
-    <dimen name="activity_quiz_layout_marginTop">25dp</dimen>
-    <dimen name="activity_quiz_layout_padding">13dp</dimen>
+    <dimen name="activity_quiz_layout_marginTop">31dp</dimen>
+    <dimen name="activity_quiz_layout_padding">16dp</dimen>
 
-    <dimen name="activity_quiz_text_view_numbers_layout_width">63dp</dimen>
-    <dimen name="activity_quiz_text_view_numbers_layout_height">63dp</dimen>
-    <dimen name="activity_quiz_text_view_numbers_text_size">36sp</dimen>
+    <dimen name="activity_quiz_text_view_numbers_layout_width">79dp</dimen>
+    <dimen name="activity_quiz_text_view_numbers_layout_height">79dp</dimen>
+    <dimen name="activity_quiz_text_view_numbers_text_size">45sp</dimen>
 
-    <dimen name="activity_quiz_answers_button_layout_marginTop">50dp</dimen>
-    <dimen name="activity_quiz_answers_button_layout_marginTop2">25dp</dimen>
+    <dimen name="activity_quiz_answers_button_layout_marginTop">63dp</dimen>
+    <dimen name="activity_quiz_answers_button_layout_marginTop2">31dp</dimen>
 
-    <dimen name="activity_quiz_answers_button_layout_width">75dp</dimen>
-    <dimen name="activity_quiz_answers_button_layout_height">75dp</dimen>
-    <dimen name="activity_quiz_answers_button_layout_marginLeft">50dp</dimen>
-    <dimen name="activity_quiz_answers_button_text_size">20sp</dimen>
-    <dimen name="activity_quiz_next_image_button_layout_width">75dp</dimen>
-    <dimen name="activity_quiz_next_image_button_layout_height">75dp</dimen>
+    <dimen name="activity_quiz_answers_button_layout_width">94dp</dimen>
+    <dimen name="activity_quiz_answers_button_layout_height">94dp</dimen>
+    <dimen name="activity_quiz_answers_button_layout_marginLeft">63dp</dimen>
+    <dimen name="activity_quiz_answers_button_text_size">25sp</dimen>
+    <dimen name="activity_quiz_next_image_button_layout_width">94dp</dimen>
+    <dimen name="activity_quiz_next_image_button_layout_height">94dp</dimen>
 
 
 
