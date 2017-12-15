@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/tool_bar"
+        layout="@layout/tool_bar" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -97,7 +104,7 @@
                         android:layout_width="@dimen/activity_detail_image_button_layout_width_speech"
                         android:layout_height="@dimen/activity_detail_image_button_layout_height_speech"
                         android:background="@drawable/orange_speaker_icon"
-                        android:onClick="doSomething"/>
+                        android:onClick="doSomething" />
 
 
                 </LinearLayout>

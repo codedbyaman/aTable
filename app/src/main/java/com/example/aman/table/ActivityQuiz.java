@@ -108,6 +108,7 @@ public class ActivityQuiz extends AppCompatActivity {
 
                 } else {
                     Snackbar.make(btAns1, "Wrong Answer", Snackbar.LENGTH_SHORT).show();
+                    toolbartext.setText("test");
                 }
             }
 

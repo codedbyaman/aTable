@@ -1,7 +1,6 @@
 
 
 package com.example.aman.table;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
@@ -12,6 +11,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.support.v7.widget.Toolbar;
 import java.util.Locale;
 
 /**
@@ -39,6 +39,23 @@ public class DetailActivity extends AppCompatActivity {
         ImageButton imageButton = findViewById(R.id.bt_home);
         ImageButton imageButton1 = findViewById(R.id.bt_return);
         ImageButton buttonSpeech = findViewById(R.id.bt_speech);
+        TextView toolbar_text = (findViewById(R.id.toolbar_text));
+        toolbar_text.setVisibility(View.GONE);
+
+        Toolbar toolbar = findViewById(R.id.tool_bar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), PracticeTable.class));
+                overridePendingTransition(R.anim.slideout_back, R.anim.slidein_back);
+            }
+        });
+
+
 
         tv_speech = (TextView) findViewById(R.id.tv_table_data);
 
