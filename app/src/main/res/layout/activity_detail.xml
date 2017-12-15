@@ -89,14 +89,15 @@
                         android:id="@+id/bt_home"
                         android:layout_width="@dimen/activity_detail_image_button_layout_width_home"
                         android:layout_height="@dimen/activity_detail_image_button_layout_height_home"
+                        android:layout_marginHorizontal="@dimen/activity_detail_layout_marginHorizontal_home"
                         android:background="@drawable/home_icon" />
-                    <Button
+
+                    <ImageButton
                         android:id="@+id/bt_speech"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="speech"
-                        android:onClick="doSomething"
-                        />
+                        android:layout_width="@dimen/activity_detail_image_button_layout_width_speech"
+                        android:layout_height="@dimen/activity_detail_image_button_layout_height_speech"
+                        android:background="@drawable/orange_speaker_icon"
+                        android:onClick="doSomething"/>
 
 
                 </LinearLayout>
