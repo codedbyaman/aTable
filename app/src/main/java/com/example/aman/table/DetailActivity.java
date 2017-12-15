@@ -38,7 +38,7 @@ public class DetailActivity extends AppCompatActivity {
         TextView textView1 = findViewById(R.id.tv_table_data);
         ImageButton imageButton = findViewById(R.id.bt_home);
         ImageButton imageButton1 = findViewById(R.id.bt_return);
-        Button buttonSpeech = findViewById(R.id.bt_speech);
+        ImageButton buttonSpeech = findViewById(R.id.bt_speech);
 
         tv_speech = (TextView) findViewById(R.id.tv_table_data);
 
