@@ -72,6 +72,11 @@
     <dimen name="activity_detail_image_button_layout_width_home">50dp</dimen>
     <dimen name="activity_detail_image_button_layout_height_home">50dp</dimen>
     <dimen name="activity_detail_text_view_textsize">33sp</dimen>
+    <dimen name="activity_detail_layout_marginHorizontal_home">13dp</dimen>
+
+
+    <dimen name="activity_detail_image_button_layout_width_speech">50dp</dimen>
+    <dimen name="activity_detail_image_button_layout_height_speech">50dp</dimen>
 
     <!--this is for activity_quiz screen-->
 
