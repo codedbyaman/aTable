@@ -9,17 +9,14 @@
     <include
         android:id="@+id/tool_bar"
         layout="@layout/tool_bar" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -82,7 +79,7 @@
                         android:gravity="left"
                         android:text="Table:"
                         android:textColor="@color/colorText"
-                        android:textSize="@dimen/activity_detail_text_view_textsize" />
+                        android:textSize="@dimen/activity_detail_text_view_textsize"/>
 
                 </LinearLayout>
 
@@ -97,13 +94,13 @@
                         android:layout_width="@dimen/activity_detail_image_button_layout_width_home"
                         android:layout_height="@dimen/activity_detail_image_button_layout_height_home"
                         android:layout_marginHorizontal="@dimen/activity_detail_layout_marginHorizontal_home"
-                        android:background="@drawable/home_icon" />
+                        android:background="@drawable/home_icon_shape" />
 
                     <ImageButton
                         android:id="@+id/bt_speech"
                         android:layout_width="@dimen/activity_detail_image_button_layout_width_speech"
                         android:layout_height="@dimen/activity_detail_image_button_layout_height_speech"
-                        android:background="@drawable/orange_speaker_icon"
+                        android:background="@drawable/orange_speaker_icon_shape"
                         android:onClick="doSomething" />
 
 

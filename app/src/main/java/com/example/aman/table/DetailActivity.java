@@ -1,9 +1,11 @@
 
 
 package com.example.aman.table;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
+import android.speech.tts.Voice;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -12,6 +14,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.support.v7.widget.Toolbar;
+
 import java.util.Locale;
 
 /**
@@ -20,6 +23,7 @@ import java.util.Locale;
 
 
 public class DetailActivity extends AppCompatActivity {
+
 
     TextToSpeech textToSpeech;
 
@@ -56,7 +60,6 @@ public class DetailActivity extends AppCompatActivity {
         });
 
 
-
         tv_speech = (TextView) findViewById(R.id.tv_table_data);
 
 
@@ -66,10 +69,12 @@ public class DetailActivity extends AppCompatActivity {
                 if (status == TextToSpeech.SUCCESS) {
                     result = textToSpeech.setLanguage(Locale.ENGLISH);
                 } else {
-                    Toast.makeText(getApplicationContext(), "your device is not compatible", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Your device is not compatible", Toast.LENGTH_SHORT).show();
                 }
             }
         });
+
+
 
 
         imageButton.setOnClickListener(new View.OnClickListener() {
@@ -115,7 +120,7 @@ public class DetailActivity extends AppCompatActivity {
 
                 if (result == TextToSpeech.LANG_NOT_SUPPORTED || result == TextToSpeech.LANG_MISSING_DATA) {
 
-                    Toast.makeText(getApplicationContext(), "your device is not compatible", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Your device is not compatible", Toast.LENGTH_SHORT).show();
 
 
                 } else {
@@ -135,7 +140,7 @@ public class DetailActivity extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
-        if (textToSpeech != null){
+        if (textToSpeech != null) {
             textToSpeech.shutdown();
         }
     }

@@ -153,7 +153,7 @@
                     android:id="@+id/next_button"
                     android:layout_width="@dimen/activity_quiz_next_image_button_layout_width"
                     android:layout_height="@dimen/activity_quiz_next_image_button_layout_height"
-                    android:background="@drawable/next_button_icon" />
+                    android:background="@drawable/next_button_icon_shape" />
 
 
             </LinearLayout>
