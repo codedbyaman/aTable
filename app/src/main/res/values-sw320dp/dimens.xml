@@ -73,6 +73,9 @@
 
     <dimen name="activity_detail_image_button_layout_width_home">32dp</dimen>
     <dimen name="activity_detail_image_button_layout_height_home">32dp</dimen>
+
+    <dimen name="activity_detail_text_view_table_data_layout_marginLeft">32dp</dimen>
+
     <dimen name="activity_detail_text_view_textsize">18sp</dimen>
     <dimen name="activity_detail_layout_marginHorizontal_home">8dp</dimen>
 

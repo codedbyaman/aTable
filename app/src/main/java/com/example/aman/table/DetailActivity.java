@@ -3,6 +3,7 @@
 package com.example.aman.table;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.Voice;
@@ -30,19 +31,21 @@ public class DetailActivity extends AppCompatActivity {
     int result;
     TextView tv_speech;
     String text;
+    TextView tfont;
 
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-
-
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_detail);
+
         TextView textView = findViewById(R.id.tv_table_title);
         TextView textView1 = findViewById(R.id.tv_table_data);
         ImageButton imageButton = findViewById(R.id.bt_home);
         ImageButton imageButton1 = findViewById(R.id.bt_return);
         ImageButton buttonSpeech = findViewById(R.id.bt_speech);
+
         TextView toolbar_text = (findViewById(R.id.toolbar_text));
         toolbar_text.setVisibility(View.GONE);
 
@@ -50,6 +53,15 @@ public class DetailActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+        tfont=(TextView)findViewById(R.id.tv_table_data);
+        Typeface MyFont = Typeface.createFromAsset(getAssets(),"fonts/chalk.ttf");
+        tfont.setTypeface(MyFont);
+
+
+
+
+
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,10 +71,7 @@ public class DetailActivity extends AppCompatActivity {
             }
         });
 
-
         tv_speech = (TextView) findViewById(R.id.tv_table_data);
-
-
         textToSpeech = new TextToSpeech(DetailActivity.this, new TextToSpeech.OnInitListener() {
             @Override
             public void onInit(int status) {
@@ -73,9 +82,6 @@ public class DetailActivity extends AppCompatActivity {
                 }
             }
         });
-
-
-
 
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
