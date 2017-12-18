@@ -37,12 +37,6 @@
             android:screenOrientation="portrait">
 
         </activity>
-        <activity
-            android:name=".SplashActivity"
-            android:screenOrientation="portrait">
-
-
-        </activity>
 
         <meta-data
             android:name="io.fabric.ApiKey"

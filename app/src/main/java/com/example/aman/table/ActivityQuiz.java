@@ -48,7 +48,6 @@ public class ActivityQuiz extends AppCompatActivity {
         final TextView tvNumber2 = (findViewById(R.id.tv_number2));
 
 
-
         Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
 
