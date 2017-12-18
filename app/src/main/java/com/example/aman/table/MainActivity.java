@@ -2,21 +2,35 @@ package com.example.aman.table;
 
 
 import android.content.Intent;
+import android.media.Image;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.TextView;
+import android.support.v7.widget.Toolbar;
+
+import java.util.Random;
 
 
-public class MainActivity extends AppCompatActivity{
+
+
+public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button button = (findViewById(R.id.bt_practice));
 
-        button.setOnClickListener(new View.OnClickListener() {
+        Button btPractice = (findViewById(R.id.bt_practice));
+        Button btQuiz = (findViewById(R.id.bt_quiz));
+        ImageButton shareButton = (findViewById(R.id.share_button));
+        ImageButton likeButton = (findViewById(R.id.like_button));
+
+
+        btPractice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, PracticeTable.class);
@@ -24,5 +38,52 @@ public class MainActivity extends AppCompatActivity{
                 overridePendingTransition(R.anim.slidein, R.anim.slideout);
             }
         });
+
+        btQuiz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ActivityQuiz.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slidein, R.anim.slideout);
+
+
+            }
+        });
+        shareButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent shareIntent = new Intent();
+                shareIntent.setAction(Intent.ACTION_SEND);
+                shareIntent.putExtra(Intent.EXTRA_TEXT,
+                        "Hey checkout this useful app for Math Tables learning :https://play.google.com/store/apps/details?id=com.example.aman.table");
+                shareIntent.setType("text/plain");
+                startActivity(shareIntent);
+            }
+        });
+
+        likeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent likeIntent = new Intent(Intent.ACTION_VIEW);
+                likeIntent.setData(Uri.parse("https://play.google.com/store/apps/details?id=com.example.aman.table"));
+                startActivity(likeIntent);
+
+
+            }
+        });
+
+
+
+
+        TextView textView = findViewById(R.id.toolbar_text);
+        textView.setVisibility(View.GONE);
+
+        Toolbar toolbar =(Toolbar)findViewById(R.id.tool_bar);
+        setSupportActionBar(toolbar);
+         getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+
+
     }
+
 }

@@ -59,7 +59,7 @@
     <dimen name="activity_detail_text_view_layout_marginLeft">24dp</dimen>
     <dimen name="activity_detail_text_view_layout_marginRight">24dp</dimen>
     <dimen name="activity_detail_text_view_layout_marginTop">16dp</dimen>
-    <dimen name="activity_detail_text_view_heading_textsize">19sp</dimen>
+    <dimen name="activity_detail_text_view_heading_textsize">22sp</dimen>
 
 
     <dimen name="activity_detail_view_layout_height">1dp</dimen>
@@ -76,15 +76,12 @@
 
     <dimen name="activity_detail_text_view_table_data_layout_marginLeft">32dp</dimen>
 
-    <dimen name="activity_detail_text_view_textsize">15sp</dimen>
-
-
+    <dimen name="activity_detail_text_view_textsize">16sp</dimen>
     <dimen name="activity_detail_layout_marginHorizontal_home">8dp</dimen>
 
 
     <dimen name="activity_detail_image_button_layout_width_speech">32dp</dimen>
     <dimen name="activity_detail_image_button_layout_height_speech">32dp</dimen>
-
 
     <!--this is for activity_quiz screen-->
 
@@ -114,10 +111,6 @@
     <dimen name="activity_quiz_answers_button_text_size">13sp</dimen>
     <dimen name="activity_quiz_next_image_button_layout_width">48dp</dimen>
     <dimen name="activity_quiz_next_image_button_layout_height">48dp</dimen>
-
-
-
-
 
 
 </resources>

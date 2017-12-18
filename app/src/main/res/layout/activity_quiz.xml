@@ -1,36 +1,168 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@drawable/background_greenboard">
 
-    <LinearLayout
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/tool_bar"
+        layout="@layout/tool_bar" />
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/background_greenboard"
         android:orientation="vertical">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:text="Quiz"
-            android:textColor="#ffffff"
-            android:textAlignment="center"
-            android:textSize="30sp"
-            android:textStyle="bold"/>
-        <view
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginBottom="15dp"
-            android:background="@android:color/white"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
 
-    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/activity_quiz_text_view_layout_height"
+                android:layout_marginTop="@dimen/activity_quiz_text_view_layout_marginTop"
+                android:text="Quiz"
+                android:textAlignment="center"
+                android:textColor="@color/colorText"
+                android:textSize="@dimen/activity_quiz_text_view_textsize"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/activity_quiz_view_layout_height"
+                android:layout_marginBottom="@dimen/activity_quiz_view_layout_marginBottom"
+                android:layout_marginLeft="@dimen/activity_quiz_view_layout_marginLeft"
+                android:layout_marginRight="@dimen/activity_quiz_view_layout_marginRight"
+                android:layout_marginTop="@dimen/activity_quiz_view_layout_marginTop"
+                android:background="@android:color/white" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_quiz_layout_marginTop"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:padding="@dimen/activity_quiz_layout_padding">
+
+                <TextView
+                    android:id="@+id/tv_number1"
+                    android:layout_width="@dimen/activity_quiz_text_view_numbers_layout_width"
+                    android:layout_height="@dimen/activity_quiz_text_view_numbers_layout_height"
+                    android:gravity="center"
+                    android:text="12"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/activity_quiz_text_view_numbers_text_size" />
+
+                <TextView
+                    android:layout_width="@dimen/activity_quiz_text_view_numbers_layout_width"
+                    android:layout_height="@dimen/activity_quiz_text_view_numbers_layout_height"
+                    android:gravity="center"
+                    android:text="@string/multiply_sign"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/activity_quiz_text_view_numbers_text_size" />
+
+                <TextView
+                    android:id="@+id/tv_number2"
+                    android:layout_width="@dimen/activity_quiz_text_view_numbers_layout_width"
+                    android:layout_height="@dimen/activity_quiz_text_view_numbers_layout_height"
+                    android:gravity="center"
+                    android:text="10"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/activity_quiz_text_view_numbers_text_size" />
+
+                <TextView
+                    android:layout_width="@dimen/activity_quiz_text_view_numbers_layout_width"
+                    android:layout_height="@dimen/activity_quiz_text_view_numbers_layout_height"
+                    android:gravity="center"
+                    android:text="@string/equals_to"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/activity_quiz_text_view_numbers_text_size" />
+
+                <TextView
+                    android:id="@+id/tv_answer"
+                    android:layout_width="@dimen/activity_quiz_text_view_numbers_layout_width"
+                    android:layout_height="@dimen/activity_quiz_text_view_numbers_layout_height"
+                    android:gravity="center"
+                    android:text="@string/question_mark"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/activity_quiz_text_view_numbers_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_quiz_answers_button_layout_marginTop"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/bt_ans1"
+                    android:layout_width="@dimen/activity_quiz_answers_button_layout_width"
+                    android:layout_height="@dimen/activity_quiz_answers_button_layout_height"
+                    android:background="@drawable/button_shape"
+                    android:text="ans1"
+                    android:textSize="@dimen/activity_quiz_answers_button_text_size" />
+
+                <Button
+                    android:id="@+id/bt_ans2"
+                    android:layout_width="@dimen/activity_quiz_answers_button_layout_width"
+                    android:layout_height="@dimen/activity_quiz_answers_button_layout_height"
+                    android:layout_marginLeft="@dimen/activity_quiz_answers_button_layout_marginLeft"
+                    android:background="@drawable/button_shape"
+                    android:text="ans2"
+                    android:textSize="@dimen/activity_quiz_answers_button_text_size" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_quiz_answers_button_layout_marginTop2"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/bt_ans3"
+                    android:layout_width="@dimen/activity_quiz_answers_button_layout_width"
+                    android:layout_height="@dimen/activity_quiz_answers_button_layout_height"
+                    android:background="@drawable/button_shape"
+                    android:text="ans3"
+                    android:textSize="@dimen/activity_quiz_answers_button_text_size" />
+
+                <Button
+                    android:id="@+id/bt_ans4"
+                    android:layout_width="@dimen/activity_quiz_answers_button_layout_width"
+                    android:layout_height="@dimen/activity_quiz_answers_button_layout_height"
+                    android:layout_marginLeft="@dimen/activity_quiz_answers_button_layout_marginLeft"
+                    android:background="@drawable/button_shape"
+                    android:text="ans4"
+                    android:textSize="@dimen/activity_quiz_answers_button_text_size" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <ImageButton
+                    android:id="@+id/next_button"
+                    android:layout_width="@dimen/activity_quiz_next_image_button_layout_width"
+                    android:layout_height="@dimen/activity_quiz_next_image_button_layout_height"
+                    android:background="@drawable/next_button_icon_shape" />
 
 
+            </LinearLayout>
+        </LinearLayout>
 
 
     </RelativeLayout>
+
+
+</LinearLayout>
+
+
