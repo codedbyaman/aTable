@@ -27,6 +27,7 @@ public class ActivityQuiz extends AppCompatActivity {
     int correctanswer;
     Random random = new Random();
 
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,7 +49,6 @@ public class ActivityQuiz extends AppCompatActivity {
 
         final TextView toolbartext = (findViewById(R.id.toolbar_text));
 
-        toolbartext.setText("0/10");
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
