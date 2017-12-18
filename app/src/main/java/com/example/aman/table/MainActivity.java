@@ -78,9 +78,9 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
-        TextView textView = findViewById(R.id.toolbar_text);
-        textView.setVisibility(View.GONE);
+//
+//        TextView textView = findViewById(R.id.toolbar_text);
+//        textView.setVisibility(View.GONE);
 
         Toolbar toolbar =(Toolbar)findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);

@@ -46,13 +46,13 @@ public class DetailActivity extends AppCompatActivity {
         ImageButton imageButton1 = findViewById(R.id.bt_return);
         ImageButton buttonSpeech = findViewById(R.id.bt_speech);
 
-        TextView toolbar_text = (findViewById(R.id.toolbar_text));
-        toolbar_text.setVisibility(View.GONE);
+//        TextView toolbar_text = (findViewById(R.id.toolbar_text));
+//        toolbar_text.setVisibility(View.GONE);
 
         Toolbar toolbar = findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setDisplayShowTitleEnabled(true);
 
         tfont=(TextView)findViewById(R.id.tv_table_data);
         Typeface MyFont = Typeface.createFromAsset(getAssets(),"fonts/chalk.ttf");

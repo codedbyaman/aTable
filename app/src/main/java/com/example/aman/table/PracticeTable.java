@@ -65,8 +65,8 @@ public class PracticeTable extends AppCompatActivity {
             }
         });
 
-        TextView textView = findViewById(R.id.toolbar_text);
-        textView.setVisibility(View.GONE);
+//        TextView textView = findViewById(R.id.toolbar_text);
+//        textView.setVisibility(View.GONE);
 
 
     }

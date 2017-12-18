@@ -47,14 +47,13 @@ public class ActivityQuiz extends AppCompatActivity {
         final TextView tvNumber1 = (findViewById(R.id.tv_number1));
         final TextView tvNumber2 = (findViewById(R.id.tv_number2));
 
-        final TextView toolbartext = (findViewById(R.id.toolbar_text));
 
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setDisplayShowTitleEnabled(true);
 
 
         final int number1 = random.nextInt(21) + 1;
@@ -108,7 +107,6 @@ public class ActivityQuiz extends AppCompatActivity {
 
                 } else {
                     Snackbar.make(btAns1, "Wrong Answer", Snackbar.LENGTH_SHORT).show();
-                    toolbartext.setText("test");
                 }
             }
 
