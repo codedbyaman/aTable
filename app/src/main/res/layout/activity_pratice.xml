@@ -4,14 +4,14 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <include layout="@layout/tool_bar"/>
+    <include android:id="@+id/tool_bar"
+        layout="@layout/tool_bar"/>
 
 
-    <ImageView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        android:src="@drawable/background_greenboard" />
+        android:background="@drawable/background_greenboard" />
 
     <EditText
         android:id="@+id/et_input"

@@ -5,8 +5,7 @@
     android:orientation="vertical">
     <include
         android:id="@+id/tool_bar"
-        layout="@layout/tool_bar"
-        />
+        layout="@layout/tool_bar"/>
 
 <RelativeLayout
 
@@ -15,11 +14,10 @@
     android:orientation="vertical">
 
 
-    <ImageView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        android:src="@drawable/background_greenboard" />
+        android:background="@drawable/background_greenboard" />
 
     <LinearLayout
         android:layout_width="match_parent"

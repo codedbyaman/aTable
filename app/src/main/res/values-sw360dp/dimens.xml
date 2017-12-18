@@ -79,7 +79,7 @@
 
     <dimen name="activity_detail_text_view_table_data_layout_marginLeft">40dp</dimen>
 
-    <dimen name="activity_detail_text_view_textsize">23sp</dimen>
+    <dimen name="activity_detail_text_view_textsize">20sp</dimen>
     <dimen name="activity_detail_layout_marginHorizontal_home">10dp</dimen>
 
 
