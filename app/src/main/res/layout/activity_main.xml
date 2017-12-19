@@ -54,6 +54,7 @@
                 android:layout_marginTop="@dimen/main_practic_button_marginTop"
                 android:background="@drawable/button_shape"
                 android:text="practice"
+                android:textColor="@color/colorButtonText"
                 android:textSize="@dimen/main_practice_button_textsize"
                 android:textStyle="bold" />
 
@@ -64,6 +65,7 @@
                 android:layout_marginTop="@dimen/main_quiz_button_marginTop"
                 android:background="@drawable/button_shape"
                 android:text="quiz"
+                android:textColor="@color/colorButtonText"
                 android:textSize="@dimen/main_quiz_button_textsize"
                 android:textStyle="bold" />
         </LinearLayout>

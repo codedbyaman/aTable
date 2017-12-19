@@ -41,6 +41,7 @@
         android:layout_marginTop="@dimen/activity_practice_button_marginTop"
         android:background="@drawable/button_shape"
         android:text="submit"
+        android:textColor="@color/colorButtonText"
         android:textSize="@dimen/activity_practice_submit_button_textsize"
         android:textStyle="bold"/>
 
