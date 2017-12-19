@@ -38,6 +38,7 @@
                         android:background="@drawable/left_return_button"
                         android:visibility="gone" />
 
+
                     <TextView
                         android:id="@+id/tv_table_title"
                         android:layout_width="match_parent"
@@ -99,6 +100,12 @@
                         android:layout_height="@dimen/activity_detail_image_button_layout_height_speech"
                         android:background="@drawable/orange_speaker_icon_shape"
                         android:onClick="doSomething" />
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="popup"
+                        android:id="@+id/bt_popup"/>
+
 
 
                 </LinearLayout>
