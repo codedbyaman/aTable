@@ -27,6 +27,7 @@
                 android:layout_marginTop="@dimen/activity_quiz_text_view_layout_marginTop"
                 android:text="Quiz"
                 android:textAlignment="center"
+                android:gravity="center"
                 android:textColor="@color/colorText"
                 android:textSize="@dimen/activity_quiz_text_view_textsize"
                 android:textStyle="bold" />
