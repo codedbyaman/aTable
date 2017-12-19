@@ -27,6 +27,7 @@
             android:layout_width="@dimen/main_screen_logo_width"
             android:layout_height="@dimen/main_screen_logo_height"
             android:layout_gravity="center"
+
             android:layout_marginTop="@dimen/main_screen_layout_marginTop"
             android:src="@drawable/welcome1" />
 
