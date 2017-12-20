@@ -65,7 +65,7 @@
                 android:layout_height="@dimen/main_quiz_button_height"
                 android:layout_marginTop="@dimen/main_quiz_button_marginTop"
                 android:background="@drawable/button_shape"
-                android:text="quiz"
+                android:text="test"
                 android:textColor="@color/colorButtonText"
                 android:textSize="@dimen/main_quiz_button_textsize"
                 android:textStyle="bold" />
