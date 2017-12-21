@@ -99,8 +99,9 @@ public class ActivityQuiz extends AppCompatActivity {
         btAns1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tvAnswer.setText(Integer.toString(correctanswer));
                 if (btAns1.getText().toString().equals(Integer.toString(correctanswer))) {
+                    tvAnswer.setText(Integer.toString(correctanswer));
+
                     Snackbar.make(btAns1, "Correct Answer", Snackbar.LENGTH_SHORT).show();
 
 
@@ -113,8 +114,9 @@ public class ActivityQuiz extends AppCompatActivity {
         btAns2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tvAnswer.setText(Integer.toString(correctanswer));
                 if (btAns2.getText().toString().equals(Integer.toString(correctanswer))) {
+                    tvAnswer.setText(Integer.toString(correctanswer));
+
                     Snackbar.make(btAns2, "Correct Answer", Snackbar.LENGTH_SHORT).show();
                 } else {
                     Snackbar.make(btAns2, "Wrong Answer", Snackbar.LENGTH_SHORT).show();
@@ -126,8 +128,9 @@ public class ActivityQuiz extends AppCompatActivity {
         btAns3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tvAnswer.setText(Integer.toString(correctanswer));
                 if (btAns3.getText().toString().equals(Integer.toString(correctanswer))) {
+                    tvAnswer.setText(Integer.toString(correctanswer));
+
                     Snackbar.make(btAns3, "Correct Answer", Snackbar.LENGTH_SHORT).show();
 
                 } else {
@@ -138,8 +141,9 @@ public class ActivityQuiz extends AppCompatActivity {
         btAns4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tvAnswer.setText(Integer.toString(correctanswer));
                 if (btAns4.getText().toString().equals(Integer.toString(correctanswer))) {
+                    tvAnswer.setText(Integer.toString(correctanswer));
+
                     Snackbar.make(btAns4, "Correct Answer", Snackbar.LENGTH_SHORT).show();
 
                 } else {
