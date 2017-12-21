@@ -1,0 +1,6 @@
+<resources>
+    <string name="question_mark">\?</string>
+    <string name="equals_to">=</string>
+    <string name="multiply_sign">X</string>
+    <string name="app_icon_name">aTable</string>
+</resources>
