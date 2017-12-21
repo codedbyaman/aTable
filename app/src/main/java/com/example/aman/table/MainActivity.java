@@ -10,9 +10,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.support.v7.widget.Toolbar;
 
+import com.bumptech.glide.Glide;
 import com.crashlytics.android.Crashlytics;
 import io.fabric.sdk.android.Fabric;
 import java.util.Random;
@@ -27,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
         Fabric.with(this, new Crashlytics());
 
         setContentView(R.layout.activity_main);
+
+        setLogo();
 
         Button btPractice = (findViewById(R.id.bt_practice));
         Button btQuiz = (findViewById(R.id.bt_quiz));
@@ -90,4 +94,16 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-}
+    private void setLogo() {
+        ImageView imageViewBg = (ImageView)findViewById(R.id.iv_background);
+
+        try {
+            Glide.with(this).load(getResources().getDrawable(R.drawable.welcome1)).dontAnimate().fitCenter().into(imageViewBg);
+        } catch (Exception e) {
+        }
+        }
+
+    }
+
+
+
