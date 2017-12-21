@@ -54,13 +54,9 @@ public class DetailActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(true);
 
-        tfont=(TextView)findViewById(R.id.tv_table_data);
-        Typeface MyFont = Typeface.createFromAsset(getAssets(),"fonts/chalk.ttf");
+        tfont = (TextView) findViewById(R.id.tv_table_data);
+        Typeface MyFont = Typeface.createFromAsset(getAssets(), "fonts/chalk.ttf");
         tfont.setTypeface(MyFont);
-
-
-
-
 
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -132,15 +128,13 @@ public class DetailActivity extends AppCompatActivity {
                 } else {
 
                     text = tv_speech.getText().toString();
+                    text = text.replace("x", "into");
+
                     textToSpeech.speak(text, TextToSpeech.QUEUE_FLUSH, null);
-
-
                 }
 
                 break;
         }
-
-
     }
 
     @Override
