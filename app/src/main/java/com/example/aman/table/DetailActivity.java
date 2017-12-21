@@ -6,15 +6,15 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
-import android.speech.tts.Voice;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.support.v7.widget.Toolbar;
+import android.widget.PopupMenu;
 
 import java.util.Locale;
 
@@ -23,7 +23,7 @@ import java.util.Locale;
  */
 
 
-public class DetailActivity extends AppCompatActivity {
+public class DetailActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
 
 
     TextToSpeech textToSpeech;
@@ -32,7 +32,9 @@ public class DetailActivity extends AppCompatActivity {
     TextView tv_speech;
     String text;
     TextView tfont;
-
+    long number;
+    String currentLanguage;
+    String DEFAULT_LANGUAGE = "english";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -42,9 +44,9 @@ public class DetailActivity extends AppCompatActivity {
 
         TextView textView = findViewById(R.id.tv_table_title);
         TextView textView1 = findViewById(R.id.tv_table_data);
-        ImageButton imageButton = findViewById(R.id.bt_home);
+        ImageButton imageButton = findViewById(R.id.ib_home);
         ImageButton imageButton1 = findViewById(R.id.bt_return);
-        ImageButton buttonSpeech = findViewById(R.id.bt_speech);
+        ImageButton settingButton = findViewById(R.id.ib)
 
 //        TextView toolbar_text = (findViewById(R.id.toolbar_text));
 //        toolbar_text.setVisibility(View.GONE);
@@ -68,16 +70,7 @@ public class DetailActivity extends AppCompatActivity {
         });
 
         tv_speech = (TextView) findViewById(R.id.tv_table_data);
-        textToSpeech = new TextToSpeech(DetailActivity.this, new TextToSpeech.OnInitListener() {
-            @Override
-            public void onInit(int status) {
-                if (status == TextToSpeech.SUCCESS) {
-                    result = textToSpeech.setLanguage(Locale.ENGLISH);
-                } else {
-                    Toast.makeText(getApplicationContext(), "Your device is not compatible", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
+
 
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -98,12 +91,22 @@ public class DetailActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-        long number = intent.getLongExtra("number", 0);
+        number = intent.getLongExtra("number", 0);
         textView.setText("table of " + number);
 
         String tableData = createTable(number);
-        textView1.setText(tableData);
+        String data = tableData.replace("za", "");
+        textView1.setText(data);
 
+    }
+
+    private String createTableForHindi(long number) {
+        String tableData = "";
+        for (long i = 1; i <= 10; i++) {
+            String line = number + " x " + i + "za = " + (number * i) + "\n";
+            tableData = tableData + line;
+        }
+        return tableData;
     }
 
     private String createTable(long number) {
@@ -118,7 +121,7 @@ public class DetailActivity extends AppCompatActivity {
     public void doSomething(View v) {
         switch (v.getId()) {
 
-            case R.id.bt_speech:
+            case R.id.ib_speech:
 
                 if (result == TextToSpeech.LANG_NOT_SUPPORTED || result == TextToSpeech.LANG_MISSING_DATA) {
 
@@ -127,14 +130,24 @@ public class DetailActivity extends AppCompatActivity {
 
                 } else {
 
-                    text = tv_speech.getText().toString();
-                    text = text.replace("x", "into");
-
+                    text = createTableForHindi(number);
+                    text = getTextForHindi(text);
                     textToSpeech.speak(text, TextToSpeech.QUEUE_FLUSH, null);
                 }
 
                 break;
         }
+    }
+
+    private String getTextForHindi(String text) {
+        text = text.replace("x", "");
+        text = text.replace("=", "");
+        return text;
+    }
+
+    private String getTextForEnglish(String text) {
+        text = text.replace("x", "into");
+        return text;
     }
 
     @Override
@@ -143,6 +156,32 @@ public class DetailActivity extends AppCompatActivity {
         if (textToSpeech != null) {
             textToSpeech.shutdown();
         }
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        textToSpeech = new TextToSpeech(DetailActivity.this, new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int status) {
+                if (status == TextToSpeech.SUCCESS) {
+                    result = textToSpeech.setLanguage(Locale.ENGLISH);
+                } else {
+                    Toast.makeText(getApplicationContext(), "Your device is not compatible", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
+
+    @Override
+    public boolean onMenuItemClick(MenuItem item) {
+        String title = item.getTitle().toString();
+
+
+        currentLanguage = title;
+
+
+        return false;
     }
 }
 
