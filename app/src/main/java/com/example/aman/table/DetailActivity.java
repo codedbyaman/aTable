@@ -3,11 +3,15 @@
 package com.example.aman.table;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
+import android.os.Build;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.support.annotation.Nullable;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
@@ -15,6 +19,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.support.v7.widget.Toolbar;
 import android.widget.PopupMenu;
+
+
+import com.example.aman.table.data.CacheHelper;
 
 import java.util.Locale;
 
@@ -43,10 +50,21 @@ public class DetailActivity extends AppCompatActivity implements PopupMenu.OnMen
         setContentView(R.layout.activity_detail);
 
         TextView textView = findViewById(R.id.tv_table_title);
-        TextView textView1 = findViewById(R.id.tv_table_data);
         ImageButton imageButton = findViewById(R.id.ib_home);
         ImageButton imageButton1 = findViewById(R.id.bt_return);
-        ImageButton settingButton = findViewById(R.id.ib)
+        ImageButton settingButton = findViewById(R.id.ib_settingIcon);
+
+        settingButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PopupMenu popup = new PopupMenu(DetailActivity.this, v);
+                popup.setOnMenuItemClickListener(DetailActivity.this);
+                popup.inflate(R.menu.popup_menu);
+                popup.show();
+
+
+            }
+        });
 
 //        TextView toolbar_text = (findViewById(R.id.toolbar_text));
 //        toolbar_text.setVisibility(View.GONE);
@@ -94,11 +112,20 @@ public class DetailActivity extends AppCompatActivity implements PopupMenu.OnMen
         number = intent.getLongExtra("number", 0);
         textView.setText("table of " + number);
 
-        String tableData = createTable(number);
+        /*String tableData = createTable(number);
         String data = tableData.replace("za", "");
-        textView1.setText(data);
+        textView1.setText(data);*/
+
+        createTable();
 
     }
+
+    private void createTable() {
+        String tableData = createTableForEnglish(number);
+        TextView textView1 = findViewById(R.id.tv_table_data);
+        textView1.setText(tableData);
+    }
+
 
     private String createTableForHindi(long number) {
         String tableData = "";
@@ -109,7 +136,7 @@ public class DetailActivity extends AppCompatActivity implements PopupMenu.OnMen
         return tableData;
     }
 
-    private String createTable(long number) {
+    private String createTableForEnglish(long number) {
         String tableData = "";
         for (long i = 1; i <= 10; i++) {
             String line = number + " x " + i + " = " + (number * i) + "\n";
@@ -129,9 +156,20 @@ public class DetailActivity extends AppCompatActivity implements PopupMenu.OnMen
 
 
                 } else {
+                    String language = CacheHelper.getCurrentLanguage(getApplicationContext());
+                    if (language.equals("english")) {
+                        text = createTableForEnglish(number);
+                        text = getTextForEnglish(text);
 
-                    text = createTableForHindi(number);
-                    text = getTextForHindi(text);
+
+                    } else if (language.equals("hindi")) {
+                        text = createTableForHindi(number);
+                        text = getTextForHindi(text);
+
+                    }
+
+
+                    ;
                     textToSpeech.speak(text, TextToSpeech.QUEUE_FLUSH, null);
                 }
 
@@ -178,7 +216,8 @@ public class DetailActivity extends AppCompatActivity implements PopupMenu.OnMen
         String title = item.getTitle().toString();
 
 
-        currentLanguage = title;
+        currentLanguage = title.toLowerCase();
+        CacheHelper.setCurrentLanguage(getApplicationContext(), currentLanguage);
 
 
         return false;
