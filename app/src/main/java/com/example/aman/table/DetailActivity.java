@@ -57,6 +57,7 @@ public class DetailActivity extends AppCompatActivity implements PopupMenu.OnMen
         settingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                textToSpeech.stop();
                 PopupMenu popup = new PopupMenu(DetailActivity.this, v);
                 popup.setOnMenuItemClickListener(DetailActivity.this);
                 popup.inflate(R.menu.popup_menu);
