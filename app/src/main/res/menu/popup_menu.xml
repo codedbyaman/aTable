@@ -3,9 +3,9 @@
 
     <item
         android:id="@+id/hindi"
-        android:title="hindi"/>
+        android:title="HINDI"/>
     <item
         android:id="@+id/english"
-        android:title="english"/>
+        android:title="ENGLISH"/>
 
 </menu>
