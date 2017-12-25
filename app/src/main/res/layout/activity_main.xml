@@ -38,6 +38,7 @@
             android:layout_marginTop="@dimen/main_screen_layout_marginTop"
             android:gravity="center"
             android:text="Math Tables"
+            android:textAlignment="center"
             android:textColor="@color/colorText"
             android:textSize="@dimen/main_screen_textsize"
             android:textStyle="bold" />
@@ -54,7 +55,6 @@
                 android:layout_height="@dimen/main_practice_button_height"
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginTop="@dimen/main_practic_button_marginTop"
-
                 android:background="@drawable/button_shape"
                 android:text="practice"
                 android:textColor="@color/colorButtonText"
