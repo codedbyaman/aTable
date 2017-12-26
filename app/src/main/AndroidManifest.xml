@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.aman.table">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.b.aman.atable"  android:versionCode="2" android:versionName="1.0.1">
 
 
+    <uses-permission
+        android:name="com.example.aman.table.permission.C2D_MESSAGE"
+        tools:node="remove" />
+    <permission
+        android:name="com.example.aman.table.permission.C2D_MESSAGE"
+        tools:node="remove" />
     <application
 
 
@@ -13,7 +20,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name="com.b.aman.atable.MainActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"> <!--to remove top activities-->
             <intent-filter>
@@ -23,17 +30,17 @@
         </activity>
 
         <activity
-            android:name=".DetailActivity"
+            android:name="com.b.aman.atable.DetailActivity"
             android:screenOrientation="portrait">
 
         </activity>
         <activity
-            android:name=".PracticeTable"
+            android:name="com.b.aman.atable.PracticeTable"
             android:screenOrientation="portrait">
 
         </activity>
         <activity
-            android:name=".ActivityQuiz"
+            android:name="com.b.aman.atable.ActivityQuiz"
             android:screenOrientation="portrait">
 
         </activity>

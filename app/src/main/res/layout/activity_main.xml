@@ -38,6 +38,7 @@
             android:layout_marginTop="@dimen/main_screen_layout_marginTop"
             android:gravity="center"
             android:text="Math Tables"
+            android:textAlignment="center"
             android:textColor="@color/colorText"
             android:textSize="@dimen/main_screen_textsize"
             android:textStyle="bold" />
@@ -54,7 +55,6 @@
                 android:layout_height="@dimen/main_practice_button_height"
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginTop="@dimen/main_practic_button_marginTop"
-
                 android:background="@drawable/button_shape"
                 android:text="practice"
                 android:textColor="@color/colorButtonText"
@@ -80,21 +80,21 @@
             android:orientation="horizontal">
 
             <ImageButton
-                android:id="@+id/like_button"
+                android:id="@+id/ib_likeButton"
                 android:layout_width="@dimen/main_like_button_width"
                 android:layout_height="@dimen/main_like_button_height"
                 android:layout_marginBottom="@dimen/main_like_layout_marginBottom"
                 android:layout_marginRight="@dimen/main_like_layout_marginRight"
                 android:layout_marginTop="@dimen/main_like_layout_marginTop"
-                android:background="@drawable/hand_like_button_shape" />
+                android:background="@drawable/hand_like_button_selector" />
 
             <ImageButton
-                android:id="@+id/share_button"
+                android:id="@+id/ib_sharebutton"
                 android:layout_width="@dimen/main_share_button_width"
                 android:layout_height="@dimen/main_share_button_height"
                 android:layout_marginBottom="@dimen/main_share_layout_marginBottom"
                 android:layout_marginRight="@dimen/main_share_layout_marginRight"
-                android:background="@drawable/share_icon_shape" />
+                android:background="@drawable/share_icon_selector" />
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

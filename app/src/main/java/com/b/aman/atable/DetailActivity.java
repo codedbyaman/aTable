@@ -1,17 +1,11 @@
-
-
-package com.example.aman.table;
+package com.b.aman.atable;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Typeface;
-import android.os.Build;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.support.annotation.Nullable;
-import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
@@ -19,22 +13,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.support.v7.widget.Toolbar;
 import android.widget.PopupMenu;
-
-
-import com.example.aman.table.data.CacheHelper;
-
+import com.b.aman.atable.data.CacheHelper;
 import java.util.Locale;
-
 /**
  * Created by aman on 17/11/17.
  */
 
-
 public class DetailActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
 
-
     TextToSpeech textToSpeech;
-
     int result;
     TextView tv_speech;
     String text;
@@ -51,19 +38,20 @@ public class DetailActivity extends AppCompatActivity implements PopupMenu.OnMen
 
         TextView textView = findViewById(R.id.tv_table_title);
         ImageButton imageButton = findViewById(R.id.ib_home);
-        ImageButton imageButton1 = findViewById(R.id.bt_return);
+        ImageButton imageButton1 = findViewById(R.id.ib_return);
         ImageButton settingButton = findViewById(R.id.ib_settingIcon);
 
         settingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 textToSpeech.stop();
+
                 PopupMenu popup = new PopupMenu(DetailActivity.this, v);
+
                 popup.setOnMenuItemClickListener(DetailActivity.this);
                 popup.inflate(R.menu.popup_menu);
                 popup.show();
-
-
             }
         });
 
@@ -89,7 +77,6 @@ public class DetailActivity extends AppCompatActivity implements PopupMenu.OnMen
         });
 
         tv_speech = (TextView) findViewById(R.id.tv_table_data);
-
 
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -162,15 +149,11 @@ public class DetailActivity extends AppCompatActivity implements PopupMenu.OnMen
                         text = createTableForEnglish(number);
                         text = getTextForEnglish(text);
 
-
                     } else if (language.equals("hindi")) {
                         text = createTableForHindi(number);
                         text = getTextForHindi(text);
 
                     }
-
-
-                    ;
                     textToSpeech.speak(text, TextToSpeech.QUEUE_FLUSH, null);
                 }
 

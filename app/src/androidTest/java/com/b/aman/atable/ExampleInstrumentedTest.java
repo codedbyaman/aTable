@@ -1,4 +1,4 @@
-package com.example.aman.table;
+package com.b.aman.atable;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "609611996998",
+    "firebase_url": "https://atable-221e0.firebaseio.com",
+    "project_id": "atable-221e0",
+    "storage_bucket": "atable-221e0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:609611996998:android:327b6ee4d1b309e7",
+        "android_client_info": {
+          "package_name": "com.b.aman.atable"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "609611996998-056artb13e6mguvuuebhd56ca3f9ka13.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.b.aman.atable",
+            "certificate_hash": "03d8d0f2e6073f03fecea31f5601a24fb27783b0"
+          }
+        },
+        {
+          "client_id": "609611996998-jja7egutpouh165t1luilu149f3cc1d6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB06vVXWj8G2cc70AeroXdF7S6ffZDf7-c"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "609611996998-jja7egutpouh165t1luilu149f3cc1d6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
