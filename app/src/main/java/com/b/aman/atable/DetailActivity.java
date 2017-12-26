@@ -1,4 +1,4 @@
-package com.example.aman.table;
+package com.b.aman.atable;
 
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -13,7 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.support.v7.widget.Toolbar;
 import android.widget.PopupMenu;
-import com.example.aman.table.data.CacheHelper;
+import com.b.aman.atable.data.CacheHelper;
 import java.util.Locale;
 /**
  * Created by aman on 17/11/17.

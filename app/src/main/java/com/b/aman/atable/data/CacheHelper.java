@@ -1,6 +1,5 @@
-package com.example.aman.table.data;
+package com.b.aman.atable.data;
 
-import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
 
