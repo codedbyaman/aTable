@@ -50,6 +50,7 @@
                         android:layout_marginTop="@dimen/activity_detail_text_view_layout_marginTop"
                         android:gravity="center"
                         android:text="TABLE OF X "
+                        android:textAlignment="center"
                         android:textAllCaps="true"
                         android:textColor="@color/colorText"
                         android:textSize="@dimen/activity_detail_text_view_heading_textsize" />

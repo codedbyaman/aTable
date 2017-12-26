@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Fabric.with(this, new Crashlytics());
 
+
         setContentView(R.layout.activity_main);
 
         setLogo();
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
         btPractice.setOnClickListener(new View.OnClickListener() {
             @Override
+
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, PracticeTable.class);
                 startActivity(intent);
