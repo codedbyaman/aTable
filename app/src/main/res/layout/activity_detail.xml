@@ -30,7 +30,7 @@
                     android:layout_height="wrap_content">
 
                     <ImageButton
-                        android:id="@+id/bt_return"
+                        android:id="@+id/ib_return"
                         android:layout_width="@dimen/activity_detail_image_button_layout_width"
                         android:layout_height="@dimen/activity_detail_image_button_layout_height"
                         android:layout_alignParentLeft="true"

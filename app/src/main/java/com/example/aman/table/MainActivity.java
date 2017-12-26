@@ -2,7 +2,6 @@ package com.example.aman.table;
 
 
 import android.content.Intent;
-import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -11,15 +10,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.support.v7.widget.Toolbar;
 
 import com.bumptech.glide.Glide;
 import com.crashlytics.android.Crashlytics;
+
 import io.fabric.sdk.android.Fabric;
-import java.util.Random;
-
-
 
 
 public class MainActivity extends AppCompatActivity {
@@ -34,8 +30,8 @@ public class MainActivity extends AppCompatActivity {
 
         Button btPractice = (findViewById(R.id.bt_practice));
         Button btQuiz = (findViewById(R.id.bt_quiz));
-        ImageButton shareButton = (findViewById(R.id.share_button));
-        ImageButton likeButton = (findViewById(R.id.like_button));
+        ImageButton shareButton = (findViewById(R.id.ib_sharebutton));
+        ImageButton likeButton = (findViewById(R.id.ib_likeButton));
 
 
         btPractice.setOnClickListener(new View.OnClickListener() {
@@ -81,29 +77,27 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
 //
 //        TextView textView = findViewById(R.id.toolbar_text);
 //        textView.setVisibility(View.GONE);
 
-        Toolbar toolbar =(Toolbar)findViewById(R.id.tool_bar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
-         getSupportActionBar().setDisplayShowHomeEnabled(true);
-
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
 
     }
 
     private void setLogo() {
-        ImageView imageViewBg = (ImageView)findViewById(R.id.iv_background);
+        ImageView imageViewBg = (ImageView) findViewById(R.id.iv_background);
 
         try {
             Glide.with(this).load(getResources().getDrawable(R.drawable.welcome1)).dontAnimate().fitCenter().into(imageViewBg);
         } catch (Exception e) {
         }
-        }
-
     }
+
+}
 
 
 
