@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/background_greenboard">
 
-    <!-- Toolbar Include -->
+    <!-- ─────────────── TOOLBAR ─────────────── -->
     <include
         android:id="@+id/tool_bar"
         layout="@layout/tool_bar"
@@ -13,7 +13,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Background Image -->
+
+    <!-- ───────── CHALK-BOARD ILLUSTRATION ───────── -->
     <ImageView
         android:id="@+id/iv_background"
         android:layout_width="0dp"
@@ -21,82 +22,102 @@
         android:contentDescription="@string/welcome_image"
         android:src="@drawable/welcome1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent="0.4"
+        app:layout_constraintHeight_percent="0.30"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tool_bar" />
 
-    <!-- Title TextView -->
+
+    <!-- ─────────────────── TITLE ─────────────────── -->
     <TextView
         android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text=""
-        android:textAlignment="center"
         android:textColor="?attr/colorOnBackground"
-        android:textSize="24sp"
+        android:textSize="26sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/iv_background" />
 
-    <!-- Button Container for Practice and Quiz -->
+
+    <!-- ─────────── PRACTISE / QUIZ BUTTONS ─────────── -->
     <LinearLayout
         android:id="@+id/button_container"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="28dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_title">
 
-        <!-- Practice Button -->
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/bt_practice"
             style="@style/AnimatedButtonStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/practice_button_desc"
-            android:text="@string/practice" />
+            android:layout_width="160dp"
+            android:layout_height="80dp"
+            android:text="@string/practice"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            app:backgroundTint="?attr/colorPrimary"
+            app:cornerRadius="12dp"
+            app:rippleColor="?attr/colorOnPrimary"
+            app:strokeColor="?attr/colorPrimary"
+            app:strokeWidth="1dp" />
 
-        <!-- Quiz Button -->
-        <Button
+        <!-- 8 dp gap -->
+        <Space
+            android:layout_width="8dp"
+            android:layout_height="0dp" />
+
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/bt_quiz"
             style="@style/AnimatedButtonStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:contentDescription="@string/quiz_button_desc"
-            android:text="@string/quiz" />
+            android:layout_width="160dp"
+            android:layout_height="80dp"
+            android:text="@string/quiz"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            app:backgroundTint="?attr/colorPrimary"
+            app:cornerRadius="12dp"
+            app:rippleColor="?attr/colorOnPrimary"
+            app:strokeColor="?attr/colorPrimary"
+            app:strokeWidth="1dp" />
     </LinearLayout>
 
-    <!-- Social Buttons (Like & Share) -->
+
+    <!-- ──────── LIKE & SHARE  (raised 60 dp) ──────── -->
     <LinearLayout
         android:id="@+id/social_container"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_marginBottom="60dp"
         android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <!-- Like Button -->
         <ImageButton
             android:id="@+id/ib_likeButton"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
             android:background="@drawable/hand_like_button_selector"
-            android:contentDescription="@string/like_button_desc" />
+            android:contentDescription="@string/like_button_desc"
+            android:elevation="6dp" />
 
-        <!-- Share Button -->
         <ImageButton
             android:id="@+id/ib_shareButton"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="8dp"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="12dp"
             android:background="@drawable/share_icon_selector"
-            android:contentDescription="@string/share_button_desc" />
+            android:contentDescription="@string/share_button_desc"
+            android:elevation="6dp" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
