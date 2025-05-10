@@ -2,7 +2,6 @@
   <img src="https://github.com/user-attachments/assets/ad2d946d-a72d-4112-a7d0-839f08a0bed6" width="140" alt="aTable logo"/>
 </p>
 
-<h1 align="center">aTable</h1>
 <p align="center"><em>Learn math tables the fun way 🧮</em></p>
 <p align="center">
   Powered by <strong>Material You</strong> (dynamic light / dark theme), bilingual Text‑to‑Speech, haptic feedback & quizzes.
