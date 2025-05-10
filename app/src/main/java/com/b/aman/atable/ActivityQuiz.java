@@ -1,6 +1,5 @@
 package com.b.aman.atable;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -52,14 +51,15 @@ public class ActivityQuiz extends AppCompatActivity {
     private void setupToolbar() {
         Toolbar toolbar = findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
+
         if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setDisplayShowTitleEnabled(true);
+            // 1️⃣  Hide the automatic title coming from the activity label
+            getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+            // 2️⃣  Disable / hide the default “up” (back) arrow
+            getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+            getSupportActionBar().setHomeButtonEnabled(false);
         }
-        toolbar.setNavigationOnClickListener(v -> {
-            startActivity(new Intent(getApplicationContext(), MainActivity.class));
-            overridePendingTransition(R.anim.slideout_back, R.anim.slidein_back);
-        });
     }
 
     private void generateQuestion() {

@@ -19,6 +19,7 @@
         android:id="@+id/iv_background"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginTop="70dp"
         android:contentDescription="@string/welcome_image"
         android:src="@drawable/welcome1"
         app:layout_constraintEnd_toEndOf="parent"
@@ -95,10 +96,10 @@
         android:id="@+id/social_container"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="60dp"
+        android:layout_marginBottom="90dp"
         android:orientation="horizontal"
         android:paddingStart="16dp"
-        android:paddingEnd="16dp"
+        android:paddingEnd="36dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 

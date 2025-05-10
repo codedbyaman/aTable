@@ -58,8 +58,14 @@ public class MainActivity extends AppCompatActivity {
     private void setupToolbar() {
         Toolbar toolbar = findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
+
         if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayShowHomeEnabled(true);
+            // 1️⃣  Hide the automatic title coming from the activity label
+            getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+            // 2️⃣  Disable / hide the default “up” (back) arrow
+            getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+            getSupportActionBar().setHomeButtonEnabled(false);
         }
     }
 
