@@ -55,20 +55,17 @@ public class PracticeTable extends AppCompatActivity {
     }
 
     private void setupToolbar() {
-        // Set up the custom toolbar
         Toolbar toolbar = findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
 
-        // Ensure action bar is not null before setting up navigation
         if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        }
+            // 1️⃣  Hide the automatic title coming from the activity label
+            getSupportActionBar().setDisplayShowTitleEnabled(false);
 
-        // Handle the navigation action of the toolbar
-        toolbar.setNavigationOnClickListener(v -> {
-            startActivity(new Intent(getApplicationContext(), MainActivity.class));
-            overridePendingTransition(R.anim.slideout_back, R.anim.slidein_back);
-        });
+            // 2️⃣  Disable / hide the default “up” (back) arrow
+            getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+            getSupportActionBar().setHomeButtonEnabled(false);
+        }
     }
 
     // Utility method for displaying toasts

@@ -11,10 +11,13 @@ import android.widget.ImageButton;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
 import com.b.aman.atable.data.CacheHelper;
+
 import java.util.Locale;
 import java.util.Objects;
 
@@ -68,14 +71,15 @@ public class DetailActivity extends AppCompatActivity
     private void setupToolbar() {
         Toolbar toolbar = findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
+
         if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayShowTitleEnabled(true);
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            // 1️⃣  Hide the automatic title coming from the activity label
+            getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+            // 2️⃣  Disable / hide the default “up” (back) arrow
+            getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+            getSupportActionBar().setHomeButtonEnabled(false);
         }
-        toolbar.setNavigationOnClickListener(v -> {
-            startActivity(new Intent(this, PracticeTable.class));
-            overridePendingTransition(R.anim.slideout_back, R.anim.slidein_back);
-        });
     }
 
     /* UI */
