@@ -1,101 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_height="match_parent"
-    android:layout_width="wrap_content"
-    android:orientation="vertical">
-    <include
-        android:id="@+id/tool_bar"
-        layout="@layout/tool_bar"/>
-
-<RelativeLayout
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:background="@drawable/background_greenboard">
 
+    <!-- Toolbar Include -->
+    <include
+        android:id="@+id/tool_bar"
+        layout="@layout/tool_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <RelativeLayout
-        android:id="@+id/rl_background"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/background_greenboard" />
+    <!-- Background Image -->
+    <ImageView
+        android:id="@+id/iv_background"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/welcome_image"
+        android:src="@drawable/welcome1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tool_bar" />
 
+    <!-- Title TextView -->
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text=""
+        android:textAlignment="center"
+        android:textColor="?attr/colorOnBackground"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_background" />
+
+    <!-- Button Container for Practice and Quiz -->
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:id="@+id/button_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title">
 
-        <ImageView
-            android:id="@+id/iv_background"
-            android:layout_width="@dimen/main_screen_logo_width"
-            android:layout_height="@dimen/main_screen_logo_height"
-            android:layout_gravity="center"
-            android:layout_marginTop="@dimen/main_screen_layout_marginTop"
-            android:src="@drawable/welcome1" />
-
-        <TextView
-            android:layout_width="match_parent"
+        <!-- Practice Button -->
+        <Button
+            android:id="@+id/bt_practice"
+            style="@style/AnimatedButtonStyle"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/main_screen_layout_marginTop"
-            android:gravity="center"
-            android:text="Math Tables"
-            android:textAlignment="center"
-            android:textColor="@color/colorText"
-            android:textSize="@dimen/main_screen_textsize"
-            android:textStyle="bold" />
+            android:contentDescription="@string/practice_button_desc"
+            android:text="@string/practice" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <!-- Quiz Button -->
+        <Button
+            android:id="@+id/bt_quiz"
+            style="@style/AnimatedButtonStyle"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/bt_practice"
-                android:layout_width="@dimen/main_practice_button_width"
-                android:layout_height="@dimen/main_practice_button_height"
-                android:layout_marginHorizontal="10dp"
-                android:layout_marginTop="@dimen/main_practic_button_marginTop"
-                android:background="@drawable/button_shape"
-                android:text="practice"
-                android:textColor="@color/colorButtonText"
-                android:textSize="@dimen/main_practice_button_textsize"
-                android:textStyle="bold" />
-
-            <Button
-                android:id="@+id/bt_quiz"
-                android:layout_width="@dimen/main_quiz_button_width"
-                android:layout_height="@dimen/main_quiz_button_height"
-                android:layout_marginTop="@dimen/main_quiz_button_marginTop"
-                android:background="@drawable/button_shape"
-                android:text="quiz"
-                android:textColor="@color/colorButtonText"
-                android:textSize="@dimen/main_quiz_button_textsize"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="bottom|end"
-            android:orientation="horizontal">
-
-            <ImageButton
-                android:id="@+id/ib_likeButton"
-                android:layout_width="@dimen/main_like_button_width"
-                android:layout_height="@dimen/main_like_button_height"
-                android:layout_marginBottom="@dimen/main_like_layout_marginBottom"
-                android:layout_marginRight="@dimen/main_like_layout_marginRight"
-                android:layout_marginTop="@dimen/main_like_layout_marginTop"
-                android:background="@drawable/hand_like_button_selector" />
-
-            <ImageButton
-                android:id="@+id/ib_sharebutton"
-                android:layout_width="@dimen/main_share_button_width"
-                android:layout_height="@dimen/main_share_button_height"
-                android:layout_marginBottom="@dimen/main_share_layout_marginBottom"
-                android:layout_marginRight="@dimen/main_share_layout_marginRight"
-                android:background="@drawable/share_icon_selector" />
-        </LinearLayout>
+            android:layout_marginStart="16dp"
+            android:contentDescription="@string/quiz_button_desc"
+            android:text="@string/quiz" />
     </LinearLayout>
-</RelativeLayout>
-</LinearLayout>
+
+    <!-- Social Buttons (Like & Share) -->
+    <LinearLayout
+        android:id="@+id/social_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Like Button -->
+        <ImageButton
+            android:id="@+id/ib_likeButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/hand_like_button_selector"
+            android:contentDescription="@string/like_button_desc" />
+
+        <!-- Share Button -->
+        <ImageButton
+            android:id="@+id/ib_shareButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/share_icon_selector"
+            android:contentDescription="@string/share_button_desc" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

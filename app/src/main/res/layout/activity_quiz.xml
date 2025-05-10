@@ -25,9 +25,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/activity_quiz_text_view_layout_height"
                 android:layout_marginTop="@dimen/activity_quiz_text_view_layout_marginTop"
+                android:gravity="center"
                 android:text="Quiz"
                 android:textAlignment="center"
-                android:gravity="center"
                 android:textColor="@color/colorText"
                 android:textSize="@dimen/activity_quiz_text_view_textsize"
                 android:textStyle="bold" />
@@ -35,10 +35,10 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/activity_quiz_view_layout_height"
-                android:layout_marginBottom="@dimen/activity_quiz_view_layout_marginBottom"
                 android:layout_marginLeft="@dimen/activity_quiz_view_layout_marginLeft"
-                android:layout_marginRight="@dimen/activity_quiz_view_layout_marginRight"
                 android:layout_marginTop="@dimen/activity_quiz_view_layout_marginTop"
+                android:layout_marginRight="@dimen/activity_quiz_view_layout_marginRight"
+                android:layout_marginBottom="@dimen/activity_quiz_view_layout_marginBottom"
                 android:background="@android:color/white" />
 
             <LinearLayout

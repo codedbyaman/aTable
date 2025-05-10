@@ -3,4 +3,27 @@
     <string name="equals_to">=</string>
     <string name="multiply_sign">X</string>
     <string name="app_icon_name">aTable</string>
+    <string name="back_button">Back</string>
+    <string name="home_button">Home</string>
+    <string name="settings_button">Settings</string>
+    <string name="speak_button">Speak</string>
+    <string name="background_desc">Greenboard background</string>
+    <string name="logo_desc">Welcome logo</string>
+    <string name="like_button_desc">Like this app</string>
+    <string name="share_button_desc">Share this app</string>
+    <string name="practice_button_desc">Practice multiplication tables</string>
+    <string name="quiz_button_desc">Start quiz mode</string>
+    <string name="welcome_image">Welcome screen illustration</string>
+    <string name="table_of">Table of %1$d</string>
+    <string name="tts_initializing">Preparing speech engine\u2026</string>
+    <string name="table_of_placeholder">Table Of X</string>
+    <string name="hint">Input Number</string>
+    <string name="submit">Submit</string>
+    <string name="error_empty_number">Please enter a number</string>
+    <string name="error_too_large">Please enter a number below 10 000</string>
+    <string name="error_invalid_number">Invalid number</string>
+    <string name="quiz">Quiz</string>
+    <string name="practice">Practice</string>
+
+
 </resources>

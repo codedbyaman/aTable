@@ -2,47 +2,47 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
 
-    <include android:id="@+id/tool_bar"
-        layout="@layout/tool_bar"/>
+    <include
+        android:id="@+id/tool_bar"
+        layout="@layout/tool_bar" />
 
 
     <RelativeLayout
-        android:layout_below="@+id/tool_bar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@+id/tool_bar"
         android:background="@drawable/background_greenboard" />
 
     <EditText
         android:id="@+id/et_input"
         android:layout_width="match_parent"
         android:layout_height="@dimen/activity_practice_edit_text_layout_height"
-        android:layout_marginLeft="@dimen/activity_practice_edit_text_marginLeft"
-        android:layout_marginRight="@dimen/activity_practice_edit_text_marginRight"
+        android:layout_marginStart="@dimen/activity_practice_edit_text_marginLeft"
         android:layout_marginTop="@dimen/activity_practice_edit_text_marginTop"
+        android:layout_marginEnd="@dimen/activity_practice_edit_text_marginRight"
         android:alpha=".7"
         android:background="@drawable/edit_text_bg"
-        android:hint="Input Number"
+        android:gravity="center"
+        android:hint="@string/hint"
         android:inputType="number"
-        android:textSize="@dimen/activity_practice_edit_text_size"
-        android:paddingLeft="@dimen/activity_practice_edit_text_paddingLeft"
-        android:paddingRight="@dimen/activity_practice_edit_text_paddingRight"
-        android:gravity="center"/>
+        android:paddingStart="@dimen/activity_practice_edit_text_paddingLeft"
+        android:paddingEnd="@dimen/activity_practice_edit_text_paddingRight"
+        android:textSize="@dimen/activity_practice_edit_text_size" />
 
     <Button
         android:id="@+id/bt_submit"
         android:layout_width="match_parent"
         android:layout_height="@dimen/activity_practice_button_layout_height"
         android:layout_below="@+id/et_input"
-        android:layout_marginLeft="@dimen/activity_practice_button_marginLeft"
-        android:layout_marginRight="@dimen/activity_practice_button_marginRight"
+        android:layout_marginStart="@dimen/activity_practice_button_marginLeft"
         android:layout_marginTop="@dimen/activity_practice_button_marginTop"
+        android:layout_marginEnd="@dimen/activity_practice_button_marginRight"
         android:background="@drawable/button_shape"
-        android:text="submit"
-        android:textColor="@color/colorButtonText"
+        android:text="@string/submit"
+        android:textColor="@color/white"
         android:textSize="@dimen/activity_practice_submit_button_textsize"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 
 </RelativeLayout>

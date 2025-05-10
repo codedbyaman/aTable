@@ -17,7 +17,7 @@
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait"
+            android:screenOrientation="fullSensor"
             android:exported="true"> <!-- Required for Android 12+ -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,13 +28,13 @@
         <!-- Other activities -->
         <activity
             android:name=".DetailActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="fullSensor" />
         <activity
             android:name=".PracticeTable"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="fullSensor" />
         <activity
             android:name=".ActivityQuiz"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="fullSensor" />
 
         <!-- Optional legacy Crashlytics metadata -->
         <meta-data

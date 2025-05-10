@@ -1,122 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:background="@drawable/background_greenboard">
 
+    <!-- Toolbar -->
     <include
         android:id="@+id/tool_bar"
-        layout="@layout/tool_bar" />
+        layout="@layout/tool_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Title -->
+    <TextView
+        android:id="@+id/tv_table_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="TABLE OF X"
+        android:textColor="@color/colorText"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tool_bar" />
+
+    <!-- Table body -->
+    <TextView
+        android:id="@+id/tv_table_data"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:lineSpacingExtra="2dp"
+        android:textColor="@android:color/white"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toTopOf="@id/button_container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_table_title" />
+
+    <!-- Bottom button row -->
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:id="@+id/button_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="150dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/background_greenboard">
+        <ImageButton
+            android:id="@+id/ib_home"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/ic_home_selector"
+            android:contentDescription="@string/home_button" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+        <ImageButton
+            android:id="@+id/ib_settingIcon"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/ic_settings"
+            android:contentDescription="@string/settings_button" />
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <ImageButton
-                        android:id="@+id/ib_return"
-                        android:layout_width="@dimen/activity_detail_image_button_layout_width"
-                        android:layout_height="@dimen/activity_detail_image_button_layout_height"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignTop="@+id/tv_table_title"
-                        android:background="@drawable/left_return_button"
-                        android:visibility="gone" />
-
-
-                    <TextView
-                        android:id="@+id/tv_table_title"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/activity_detail_text_view_layout_marginBottom"
-                        android:layout_marginLeft="@dimen/activity_detail_text_view_layout_marginLeft"
-                        android:layout_marginRight="@dimen/activity_detail_text_view_layout_marginRight"
-                        android:layout_marginTop="@dimen/activity_detail_text_view_layout_marginTop"
-                        android:gravity="center"
-                        android:text="TABLE OF X "
-                        android:textAlignment="center"
-                        android:textAllCaps="true"
-                        android:textColor="@color/colorText"
-                        android:textSize="@dimen/activity_detail_text_view_heading_textsize" />
-
-                </RelativeLayout>
-
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginBottom="@dimen/activity_detail_view_layout_marginBottom"
-                    android:layout_marginLeft="@dimen/activity_detail_view_layout_marginLeft"
-                    android:layout_marginRight="@dimen/activity_detail_view_marginRight"
-                    android:background="@android:color/white" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center">
-
-                    <TextView
-                        android:id="@+id/tv_table_data"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/activity_detail_text_view_table_data_layout_marginLeft"
-                        android:gravity="left"
-                        android:text="Table:"
-                        android:textColor="#ffffff"
-                        android:textSize="@dimen/activity_detail_text_view_textsize" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:orientation="horizontal">
-
-                    <ImageButton
-                        android:id="@+id/ib_home"
-                        android:layout_width="@dimen/activity_detail_image_button_layout_width_home"
-                        android:layout_height="@dimen/activity_detail_image_button_layout_height_home"
-                        android:layout_marginHorizontal="@dimen/activity_detail_layout_marginHorizontal_home"
-                        android:background="@drawable/ic_home_selector" />
-
-                    <ImageButton
-                        android:id="@+id/ib_settingIcon"
-                        android:layout_width="@dimen/activity_detail_image_button_layout_width_home"
-                        android:layout_height="@dimen/activity_detail_image_button_layout_height_home"
-                        android:layout_marginHorizontal="@dimen/activity_detail_layout_marginHorizontal_home"
-                        android:background="@drawable/ic_setting_selector" />
-
-
-                    <ImageButton
-                        android:id="@+id/ib_speech"
-                        android:layout_width="@dimen/activity_detail_image_button_layout_width_speech"
-                        android:layout_height="@dimen/activity_detail_image_button_layout_height_speech"
-                        android:layout_marginHorizontal="@dimen/activity_detail_layout_marginHorizontal_home"
-                        android:background="@drawable/ic_volume_selector"
-                        android:onClick="doSomething" />
-
-
-                </LinearLayout>
-            </LinearLayout>
-        </RelativeLayout>
-
+        <ImageButton
+            android:id="@+id/ib_speech"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/ic_volume_selector"
+            android:contentDescription="@string/speak_button"
+            android:onClick="speakTable" />
     </LinearLayout>
-</LinearLayout>
 
+</androidx.constraintlayout.widget.ConstraintLayout>

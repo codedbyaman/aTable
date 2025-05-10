@@ -1,11 +1,8 @@
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimary</item>
-        <item name="colorAccent">@color/colorAccent</item>
+    <style name="AnimatedButtonStyle" parent="Widget.MaterialComponents.Button">
+        <item name="android:backgroundTint">?attr/colorPrimary</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
     </style>
 
 </resources>

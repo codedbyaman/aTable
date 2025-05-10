@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
         Button btPractice = findViewById(R.id.bt_practice);
         Button btQuiz = findViewById(R.id.bt_quiz);
-        ImageButton shareButton = findViewById(R.id.ib_sharebutton);
+        ImageButton shareButton = findViewById(R.id.ib_shareButton);
         ImageButton likeButton = findViewById(R.id.ib_likeButton);
 
         btPractice.setOnClickListener(v -> {
@@ -71,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
                     .dontAnimate()
                     .fitCenter()
                     .into(imageViewBg);
-        } catch (Exception ignored) {}
+        } catch (Exception ignored) {
+        }
     }
 }
