@@ -24,6 +24,7 @@
     <string name="error_invalid_number">Invalid number</string>
     <string name="quiz">Quiz</string>
     <string name="practice">Practice</string>
+    <string name="table_of_x">TABLE OF X</string>
 
 
 </resources>
