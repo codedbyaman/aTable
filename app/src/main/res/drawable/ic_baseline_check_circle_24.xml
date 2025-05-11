@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?><!-- baseline check_circle 24dp  Material Icons -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- You can tint this via android:tint / app:tint from layouts -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M12,2
+    C6.48,2 2,6.48 2,12
+    s4.48,10 10,10 10,-4.48 10,-10S17.52,2 12,2z
+    M10,16.5
+    l-3.73,-3.73 1.42,-1.42L10,13.66l6.35,-6.35
+    1.42,1.42L10,16.5z" />
+</vector>

@@ -25,6 +25,8 @@
     <string name="quiz">Quiz</string>
     <string name="practice">Practice</string>
     <string name="table_of_x">TABLE OF X</string>
-
+    <string name="pick_or_enter">PICK OR ENTER</string>
+    <string name="quick_pick">QUICK PICK</string>
+    <string name="error_enter_number">Please enter a number</string>
 
 </resources>

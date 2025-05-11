@@ -5,6 +5,7 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.Voice;
+import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
@@ -85,8 +86,18 @@ public class DetailActivity extends AppCompatActivity
     /* UI */
     private void setupUI() {
         tvSpeech = findViewById(R.id.tv_table_data);
-        Typeface chalk = Typeface.createFromAsset(getAssets(), "fonts/chalk.ttf");
+
+        Typeface chalk = Typeface.createFromAsset(getAssets(), "fonts/squakychalk.ttf");
+
         tvSpeech.setTypeface(chalk);
+        tvSpeech.setTextIsSelectable(true);
+        tvSpeech.setMovementMethod(android.text.method.ScrollingMovementMethod.getInstance());
+        tvSpeech.setHorizontallyScrolling(true);
+        tvSpeech.setSingleLine(false);
+        tvSpeech.setLines(10);
+        tvSpeech.setEllipsize(TextUtils.TruncateAt.MARQUEE);
+        tvSpeech.setSelected(true);
+        tvSpeech.setMarqueeRepeatLimit(-1);
 
         ImageButton homeButton = findViewById(R.id.ib_home);
         ImageButton settingButton = findViewById(R.id.ib_settingIcon);

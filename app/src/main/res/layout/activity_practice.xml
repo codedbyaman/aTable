@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_greenboard">
+
+    <!-- ───────── TOOLBAR ───────── -->
+    <include
+        android:id="@+id/tool_bar"
+        layout="@layout/tool_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- ─────── NUMBER INPUT ─────── -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_input"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="180dp"
+        android:layout_marginEnd="10dp"
+        android:hint="@string/hint"
+        app:boxBackgroundMode="outline"
+        app:boxStrokeColor="@color/colorPrimary"
+        app:counterEnabled="true"
+        app:counterMaxLength="4"
+        app:endIconMode="clear_text"
+        app:helperTextEnabled="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tool_bar"
+        app:startIconDrawable="@drawable/ic_baseline_calculate_24"
+        app:startIconTint="@color/colorText">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:digits="0123456789"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLines="1"
+            android:textColor="@android:color/white"
+            android:textColorHint="#88FFFFFF"
+            android:textSize="20sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <!-- ────────── SUBMIT BUTTON ────────── -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/bt_submit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:backgroundTint="@android:color/white"
+        android:text="@string/submit"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="?attr/colorPrimary"
+        android:textSize="18sp"
+        app:cornerRadius="12dp"
+        app:layout_constraintEnd_toEndOf="@id/til_input"
+        app:layout_constraintStart_toStartOf="@id/til_input"
+        app:layout_constraintTop_toBottomOf="@id/til_input" />
+
+    <!-- ───────── QUICK-PICK CHIPS ───────── -->
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/cg_quick"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
+        app:chipSpacing="10dp"
+        app:layout_constraintEnd_toEndOf="@id/bt_submit"
+        app:layout_constraintStart_toStartOf="@id/bt_submit"
+        app:layout_constraintTop_toBottomOf="@id/bt_submit"
+        app:singleSelection="false" />
+
+    <!-- ────────── HINT TEXT ────────── -->
+    <TextView
+        android:id="@+id/tv_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/pick_or_enter"
+        android:textColor="#CCFFFFFF"
+        android:textSize="26sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cg_quick" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

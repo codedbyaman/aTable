@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/drawable/button_submit_selector.xml -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Disabled ─ lower opacity -->
+    <item android:state_enabled="false">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/colorPrimary"/>
+            <corners android:radius="8dp"/>
+            <alpha android:alpha="0.4"/>
+        </shape>
+    </item>
+
+    <!-- Pressed ─ darken a little for tactile feedback -->
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <solid android:color="?attr/colorPrimaryVariant"/>
+            <corners android:radius="8dp"/>
+        </shape>
+    </item>
+
+    <!-- Default (enabled, not pressed) -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/colorPrimary"/>
+            <corners android:radius="8dp"/>
+        </shape>
+    </item>
+
+</selector>
