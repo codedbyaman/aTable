@@ -2,7 +2,7 @@
   <img src="https://github.com/user-attachments/assets/ad2d946d-a72d-4112-a7d0-839f08a0bed6" width="140" alt="aTable logo"/>
 </p>
 
-<p align="center"><em>Learn math tables the fun way 🧮</em></p>
+<p align="center"><em>Learn math tables in fun way 🧮</em></p>
 <p align="center">
   Powered by <strong>Material You</strong> (dynamic light / dark theme), bilingual Text‑to‑Speech, haptic feedback & quizzes.
 </p>
@@ -15,7 +15,12 @@
 </p>
 
 ---
+## 🖼️ Overview
+aTable is a lightweight Android app for **students**, **teachers** and **parents** to practise, quiz and *listen to* tables in English or Hindi.
 
+https://github.com/user-attachments/assets/0248a482-66dd-4abc-bbcc-40f8445376df
+
+---
 ## 📑 Contents
 - [Overview](#overview)
 - [Features](#features)
@@ -27,10 +32,8 @@
 - [Contact](#contact)
 - [License](#license)
 
----
 
-## 🖼️ Overview
-aTable is a lightweight Android app for **students**, **teachers** and **parents** to practise, quiz and *listen to* tables in English or Hindi.
+ 
 
 Built with **Kotlin 1.9**, **AGP 8**, **Material 3** and follows Google’s [modern Android guidelines](https://developer.android.com/guide).
 
