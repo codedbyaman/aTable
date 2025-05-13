@@ -28,5 +28,18 @@
     <string name="pick_or_enter">PICK OR ENTER</string>
     <string name="quick_pick">QUICK PICK</string>
     <string name="error_enter_number">Please enter a number</string>
+    <string name="next_question">Next Questions</string>
+    <string name="quiz_time">Quiz Time!</string>
+    <string name="next">Next</string>
+    <string name="space">" "</string>
+    <string name="equal">=</string>
+    <string name="_10">10</string>
+    <string name="multiplication">X</string>
+    <string name="_12">12</string>
+    <string name="_30">30</string>
+    <string name="_40">40</string>
+    <string name="_24">24</string>
+    <string name="_26">26</string>
+    <string name="_15_s">15 s</string>
 
 </resources>
