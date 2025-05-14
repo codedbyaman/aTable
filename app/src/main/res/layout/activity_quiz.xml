@@ -6,6 +6,18 @@
     android:layout_height="match_parent"
     android:background="@drawable/background_greenboard">
 
+    <!-- Next Button -->
+    <ImageButton
+        android:id="@+id/next_button"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginBottom="180dp"
+        android:background="@drawable/next_button_selector"
+        android:contentDescription="@string/next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <!-- Toolbar -->
     <include
         android:id="@+id/tool_bar"
@@ -132,16 +144,4 @@
             android:layout_columnWeight="1"
             android:text="@string/_40" />
     </GridLayout>
-
-    <!-- Next‐question button -->
-    <ImageButton
-        android:id="@+id/next_button"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_margin="24dp"
-        android:background="?attr/selectableItemBackgroundBorderless"
-        android:contentDescription="@string/next"
-        android:src="@drawable/next_button_icon"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
