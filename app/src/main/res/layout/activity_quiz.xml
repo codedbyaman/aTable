@@ -6,19 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/background_greenboard">
 
-    <!-- Next Button -->
-    <ImageButton
-        android:id="@+id/next_button"
-        android:layout_width="56dp"
-        android:layout_height="56dp"
-        android:layout_marginBottom="180dp"
-        android:background="@drawable/next_button_selector"
-        android:contentDescription="@string/next"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <!-- Toolbar -->
+    <!-- TOOLBAR (unchanged) -->
     <include
         android:id="@+id/tool_bar"
         layout="@layout/tool_bar"
@@ -26,80 +14,86 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Timer display -->
+    <!-- TIMER ICON -->
+    <ImageView
+        android:id="@+id/iv_timer_icon"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/timer_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tool_bar" />
+
+    <!-- TIMER TEXT -->
     <TextView
         android:id="@+id/tv_timer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="12dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="17dp"
         android:text="@string/_15_s"
         android:textColor="@android:color/white"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@id/iv_timer_icon"
         app:layout_constraintTop_toBottomOf="@id/tool_bar" />
 
-    <!-- Question row: “12 × 10 = ?” -->
+    <!-- QUESTION ROW -->
     <LinearLayout
         android:id="@+id/question_row"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="90dp"
+        android:layout_marginTop="24dp"
         android:gravity="center"
         android:orientation="horizontal"
-        app:layout_constraintEnd_toStartOf="@id/tv_timer"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tool_bar">
+        app:layout_constraintTop_toBottomOf="@id/iv_timer_icon">
 
         <TextView
             android:id="@+id/tv_number1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:text="@string/_12"
+            android:text="@string/_10"
             android:textColor="@android:color/white"
-            android:textSize="28sp" />
+            android:textSize="38sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp"
-            android:text="@string/multiplication"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="@string/multiply_sign"
             android:textColor="@android:color/white"
-            android:textSize="28sp" />
+            android:textSize="38sp" />
 
         <TextView
             android:id="@+id/tv_number2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:text="@string/_10"
+            android:text="@string/_12"
             android:textColor="@android:color/white"
-            android:textSize="28sp" />
+            android:textSize="38sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:text="@string/equal"
             android:textColor="@android:color/white"
-            android:textSize="28sp" />
+            android:textSize="38sp" />
 
         <TextView
             android:id="@+id/tv_answer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:text="@string/space"
+            android:text=""
             android:textColor="@android:color/white"
-            android:textSize="28sp" />
+            android:textSize="38sp" />
     </LinearLayout>
 
-    <!-- Answer buttons in a 2×2 grid -->
+    <!-- ANSWER GRID -->
     <GridLayout
         android:id="@+id/answers_grid"
         android:layout_width="0dp"
@@ -117,31 +111,80 @@
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_columnWeight="1"
-            android:text="@string/_24" />
+            android:layout_columnWeight="1" />
 
         <Button
             android:id="@+id/bt_ans2"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_columnWeight="1"
-            android:text="@string/_26" />
+            android:layout_columnWeight="1" />
 
         <Button
             android:id="@+id/bt_ans3"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_columnWeight="1"
-            android:text="@string/_30" />
+            android:layout_columnWeight="1" />
 
         <Button
             android:id="@+id/bt_ans4"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_columnWeight="1"
-            android:text="@string/_40" />
+            android:layout_columnWeight="1" />
     </GridLayout>
+
+    <!-- CONTROLS: Start / Reset / Next / Result -->
+    <LinearLayout
+        android:id="@+id/controls_row"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/answers_grid">
+
+        <Button
+            android:id="@+id/bt_start"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/start" />
+
+        <Button
+            android:id="@+id/bt_reset"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:enabled="false"
+            android:text="@string/reset" />
+
+        <Button
+            android:id="@+id/bt_next"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:enabled="false"
+            android:text="@string/next" />
+
+        <Button
+            android:id="@+id/bt_result"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:enabled="false"
+            android:text="@string/result" />
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -22,7 +22,7 @@
     <string name="error_empty_number">Please enter a number</string>
     <string name="error_too_large">Please enter a number below 10 000</string>
     <string name="error_invalid_number">Invalid number</string>
-    <string name="quiz">Quiz</string>
+    <string name="quiz">QUIZ</string>
     <string name="practice">Practice</string>
     <string name="table_of_x">TABLE OF X</string>
     <string name="pick_or_enter">PICK OR ENTER</string>
@@ -41,5 +41,8 @@
     <string name="_24">24</string>
     <string name="_26">26</string>
     <string name="_15_s">15 s</string>
-
+    <string name="result">Result</string>
+    <string name="reset">Reset</string>
+    <string name="start">Start</string>
+    <string name="app_name">aTable</string>
 </resources>
