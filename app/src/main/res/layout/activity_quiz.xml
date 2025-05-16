@@ -93,7 +93,7 @@
             android:textSize="38sp" />
     </LinearLayout>
 
-    <!-- ANSWER GRID -->
+    <!-- ANSWERS GRID -->
     <GridLayout
         android:id="@+id/answers_grid"
         android:layout_width="0dp"
@@ -106,33 +106,61 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/question_row">
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/bt_ans1"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_columnWeight="1" />
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            android:paddingVertical="16dp"
+            android:text="@string/option_1"
+            android:textSize="16sp"
+            app:cornerRadius="12dp"
+            app:elevation="4dp"
+            app:rippleColor="?attr/colorOnSecondary" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/bt_ans2"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_columnWeight="1" />
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            android:paddingVertical="16dp"
+            android:text="@string/option_2"
+            android:textSize="16sp"
+            app:cornerRadius="12dp"
+            app:elevation="4dp"
+            app:rippleColor="?attr/colorOnSecondary" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/bt_ans3"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_columnWeight="1" />
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            android:paddingVertical="16dp"
+            android:text="@string/option_3"
+            android:textSize="16sp"
+            app:cornerRadius="12dp"
+            app:elevation="4dp"
+            app:rippleColor="?attr/colorOnSecondary" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/bt_ans4"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_columnWeight="1" />
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            android:paddingVertical="16dp"
+            android:text="@string/option_4"
+            android:textSize="16sp"
+            app:cornerRadius="12dp"
+            app:elevation="4dp"
+            app:rippleColor="?attr/colorOnSecondary" />
     </GridLayout>
 
     <!-- CONTROLS: Start / Reset / Next / Result -->
@@ -149,7 +177,7 @@
 
         <Button
             android:id="@+id/bt_start"
-            style="@style/Widget.MaterialComponents.Button"
+            style="@style/Widget.ATable.Button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -157,7 +185,7 @@
 
         <Button
             android:id="@+id/bt_reset"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            style="@style/Widget.ATable.Button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -167,7 +195,7 @@
 
         <Button
             android:id="@+id/bt_next"
-            style="@style/Widget.MaterialComponents.Button.TextButton"
+            style="@style/Widget.ATable.Button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -177,7 +205,7 @@
 
         <Button
             android:id="@+id/bt_result"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            style="@style/Widget.ATable.Button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"

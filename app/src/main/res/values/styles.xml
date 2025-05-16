@@ -1,8 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="AnimatedButtonStyle" parent="Widget.MaterialComponents.Button">
-        <item name="android:backgroundTint">?attr/colorPrimary</item>
-        <item name="android:textColor">?android:textColorPrimary</item>
+    <!-- ─── App theme ─── -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="android:statusBarColor">?attr/colorPrimaryDark</item>
+        <!-- Use our custom button style by default -->
+        <item name="materialButtonStyle">@style/Widget.ATable.Button</item>
+    </style>
+
+    <!-- ─── 12dp rounded shape (inherits a real MaterialComponents base) ─── -->
+    <style name="ShapeAppearance.ATable.Rounded12"
+        parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">12dp</item>
+    </style>
+
+    <!-- ─── Tonal “fill” button with built-in disabled fade ─── -->
+    <style name="Widget.ATable.Button"
+        parent="Widget.MaterialComponents.Button">
+        <!-- apply our rounded corners -->
+        <item name="shapeAppearance">@style/ShapeAppearance.ATable.Rounded12</item>
+        <!-- tint-list that 50% fades when disabled -->
+        <item name="backgroundTint">@color/button_tonal_container</item>
+        <!-- white text on primary -->
+        <item name="android:textColor">?attr/colorOnPrimary</item>
+        <!-- subtle elevation -->
+        <item name="android:elevation">4dp</item>
+        <!-- ripple color -->
+        <item name="rippleColor">?attr/colorOnPrimary</item>
     </style>
 
 </resources>

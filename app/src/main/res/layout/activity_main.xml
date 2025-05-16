@@ -56,7 +56,7 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/bt_practice"
-            style="@style/AnimatedButtonStyle"
+            style="@style/MaterialAlertDialog.Material3"
             android:layout_width="160dp"
             android:layout_height="80dp"
             android:text="@string/practice"
@@ -76,11 +76,10 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/bt_quiz"
-            style="@style/AnimatedButtonStyle"
+            style="@style/MaterialAlertDialog.Material3"
             android:layout_width="160dp"
             android:layout_height="80dp"
             android:text="@string/quiz"
-            android:textAllCaps="false"
             android:textColor="@android:color/white"
             android:textSize="24sp"
             app:backgroundTint="?attr/colorPrimary"
