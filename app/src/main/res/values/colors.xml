@@ -9,5 +9,9 @@
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="white">#FFFFFF</color>
     <color name="white10">#B3FFFFFF</color>
+    <color name="grey">#CCCCCC</color>
+    <color name="pass_green">#4CAF50</color>
+    <color name="fail_red">#E86F66</color>
+    <color name="answer_box_color">#5d7453</color>
 
 </resources>

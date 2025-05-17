@@ -11,8 +11,10 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
 
 import com.bumptech.glide.Glide;
+import com.google.android.material.card.MaterialCardView;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -22,31 +24,37 @@ import java.util.Random;
 public class ActivityQuiz extends AppCompatActivity {
     private static final int TOTAL_QUESTIONS = 10;
     private static final long QUESTION_DURATION_MS = 15_000L;
+
     private final Random random = new Random();
+    private Typeface chalkFace;
+
+    private ImageView ivTimerIcon;
     private TextView tvTimer, tvNumber1, tvNumber2, tvAnswer;
     private Button[] answerButtons;
     private Button btStart, btReset, btNext, btResult;
-    private ImageView ivTimerIcon;
+
+    private MaterialCardView cardResult;
+    private TextView tvResultDisplay;
+
     private CountDownTimer timer;
     private int currentIndex, score, correctAnswer;
     private boolean quizStarted = false;
-    private Typeface chalkFace;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
 
-        // ① Load chalk font from assets/fonts/chalk.ttf
+        // 1️⃣  Load custom “chalk” font
         chalkFace = Typeface.createFromAsset(getAssets(), "fonts/chalk.ttf");
 
-        // ② Toolbar
+        // 2️⃣  Toolbar
         Toolbar toolbar = findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null)
             getSupportActionBar().setDisplayShowTitleEnabled(false);
 
-        // ③ Bind all views
+        // 3️⃣  Find all views
         ivTimerIcon = findViewById(R.id.iv_timer_icon);
         tvTimer = findViewById(R.id.tv_timer);
         tvNumber1 = findViewById(R.id.tv_number1);
@@ -65,22 +73,23 @@ public class ActivityQuiz extends AppCompatActivity {
         btNext = findViewById(R.id.bt_next);
         btResult = findViewById(R.id.bt_result);
 
-        // ④ Apply chalk font only to question/answer texts
+        cardResult = findViewById(R.id.card_result);
+        tvResultDisplay = findViewById(R.id.tv_result_display);
+
+        // 4️⃣  Apply “chalk” font
+        tvTimer.setTypeface(chalkFace);
         tvNumber1.setTypeface(chalkFace);
         tvNumber2.setTypeface(chalkFace);
         tvAnswer.setTypeface(chalkFace);
-        tvTimer.setTypeface(chalkFace);
-        for (Button b : answerButtons) {
-            b.setTypeface(chalkFace);
-        }
+        for (Button b : answerButtons) b.setTypeface(chalkFace);
 
-        // ⑤ Start with the static PNG
+        // 5️⃣  Set static hourglass initially
         ivTimerIcon.setImageResource(R.drawable.hourglass_iconpng);
 
-        // ⑥ Wire up listeners
+        // 6️⃣  Wire up all listeners
         setupListeners();
 
-        // ⑦ Reset UI to initial state
+        // 7️⃣  Reset UI to start state
         resetQuizState();
     }
 
@@ -89,15 +98,16 @@ public class ActivityQuiz extends AppCompatActivity {
             quizStarted = true;
             score = 0;
             currentIndex = 0;
+
             btStart.setEnabled(false);
             btReset.setEnabled(true);
             btNext.setEnabled(true);
             btResult.setEnabled(false);
 
-            // swap in the GIF
+            // swap to animated GIF
             Glide.with(this)
                     .asGif()
-                    .load(R.drawable.hourglass_icon)     // your .gif filename
+                    .load(R.drawable.hourglass_icon)        // GIF in drawable
                     .into(ivTimerIcon);
 
             launchQuestionWithTimer();
@@ -106,21 +116,28 @@ public class ActivityQuiz extends AppCompatActivity {
         btReset.setOnClickListener(v -> {
             quizStarted = false;
             resetQuizState();
-
             // restore static PNG
             ivTimerIcon.setImageResource(R.drawable.hourglass_iconpng);
         });
 
         btNext.setOnClickListener(v -> {
             if (!quizStarted) {
-                // preview without timer
+                // “preview” next question
                 nextQuestionCore();
             } else {
                 launchQuestionWithTimer();
             }
         });
 
-        btResult.setOnClickListener(v -> showResult());
+        btResult.setOnClickListener(v -> {
+            showResult();
+            // after showing result, allow new run
+            quizStarted = false;
+            btStart.setEnabled(true);
+            btNext.setEnabled(true);
+            btReset.setEnabled(true);
+            btResult.setEnabled(false);
+        });
 
         for (Button b : answerButtons) {
             b.setOnClickListener(this::onAnswerSelected);
@@ -132,13 +149,14 @@ public class ActivityQuiz extends AppCompatActivity {
 
         timer = new CountDownTimer(QUESTION_DURATION_MS, 1_000) {
             @Override
-            public void onTick(long millisUntilFinished) {
-                tvTimer.setText((millisUntilFinished / 1000) + "s");
+            public void onTick(long m) {
+                tvTimer.setText((m / 1_000) + "s");
             }
 
             @Override
             public void onFinish() {
                 tvTimer.setText("0s");
+                Toast.makeText(ActivityQuiz.this, "Time's up!", Toast.LENGTH_SHORT).show();
                 markWrongAndContinue();
             }
         }.start();
@@ -161,13 +179,13 @@ public class ActivityQuiz extends AppCompatActivity {
         tvNumber2.setText(String.valueOf(n2));
         tvAnswer.setText("?");
 
-        // build 1 correct + 3 unique wrong answers
+        // correct + 3 unique wrong answers
         List<Integer> opts = new ArrayList<>();
         opts.add(correctAnswer);
         while (opts.size() < 4) {
-            int wrong = random.nextInt(correctAnswer * 2 + 1);
-            if (wrong > 0 && wrong != correctAnswer && !opts.contains(wrong)) {
-                opts.add(wrong);
+            int w = random.nextInt(correctAnswer * 2 + 1);
+            if (w > 0 && w != correctAnswer && !opts.contains(w)) {
+                opts.add(w);
             }
         }
         Collections.shuffle(opts);
@@ -185,9 +203,9 @@ public class ActivityQuiz extends AppCompatActivity {
 
         Button b = (Button) view;
         int chosen = Integer.parseInt(b.getText().toString());
-        boolean correct = chosen == correctAnswer;
-        if (correct) score++;
+        boolean correct = (chosen == correctAnswer);
 
+        if (correct) score++;
         tvAnswer.setText(String.valueOf(correctAnswer));
         Toast.makeText(this, correct ? "Correct!" : "Wrong!", Toast.LENGTH_SHORT).show();
 
@@ -214,23 +232,35 @@ public class ActivityQuiz extends AppCompatActivity {
 
     private void showResult() {
         int percent = (score * 100) / TOTAL_QUESTIONS;
-        String msg = (percent >= 60 ? "Pass: " : "Fail: ") + percent + "%";
-        Toast.makeText(this, msg, Toast.LENGTH_LONG).show();
+        boolean passed = percent >= 60;
+        String text = percent + "% — " + (passed ? "Pass" : "Fail");
+
+        // reveal and style the result card
+        cardResult.setVisibility(View.VISIBLE);
+        tvResultDisplay.setText(text);
+        int color = ContextCompat.getColor(this,
+                passed ? R.color.pass_green : R.color.fail_red);
+        tvResultDisplay.setTextColor(color);
     }
 
     private void resetQuizState() {
         if (timer != null) timer.cancel();
+
         tvTimer.setText("15s");
         tvNumber1.setText("1");
         tvNumber2.setText("0");
         tvAnswer.setText("?");
+
         for (Button b : answerButtons) {
             b.setText("0");
             b.setEnabled(false);
         }
+
         btStart.setEnabled(true);
         btReset.setEnabled(false);
         btNext.setEnabled(true);
         btResult.setEnabled(false);
+
+        cardResult.setVisibility(View.GONE);
     }
 }

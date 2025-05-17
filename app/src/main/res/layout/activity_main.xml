@@ -5,7 +5,6 @@
     android:layout_height="match_parent"
     android:background="@drawable/background_greenboard">
 
-    <!-- ─────────────── TOOLBAR ─────────────── -->
     <include
         android:id="@+id/tool_bar"
         layout="@layout/tool_bar"
@@ -14,7 +13,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-    <!-- ───────── CHALK-BOARD ILLUSTRATION ───────── -->
     <ImageView
         android:id="@+id/iv_background"
         android:layout_width="0dp"
@@ -28,7 +26,6 @@
         app:layout_constraintTop_toBottomOf="@id/tool_bar" />
 
 
-    <!-- ─────────────────── TITLE ─────────────────── -->
     <TextView
         android:id="@+id/tv_title"
         android:layout_width="wrap_content"
@@ -69,7 +66,6 @@
             app:strokeColor="?attr/colorPrimary"
             app:strokeWidth="1dp" />
 
-        <!-- 8 dp gap -->
         <Space
             android:layout_width="8dp"
             android:layout_height="0dp" />
@@ -90,7 +86,6 @@
     </LinearLayout>
 
 
-    <!-- ──────── LIKE & SHARE  (raised 60 dp) ──────── -->
     <LinearLayout
         android:id="@+id/social_container"
         android:layout_width="wrap_content"
