@@ -132,7 +132,7 @@
             android:textSize="16sp"
             app:cornerRadius="12dp"
             app:elevation="4dp"
-            app:rippleColor="?attr/colorOnSecondary" />
+            app:rippleColor="@color/white10" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/bt_ans3"
@@ -146,7 +146,7 @@
             android:textSize="16sp"
             app:cornerRadius="12dp"
             app:elevation="4dp"
-            app:rippleColor="?attr/colorOnSecondary" />
+            app:rippleColor="@color/white10" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/bt_ans4"
@@ -160,61 +160,58 @@
             android:textSize="16sp"
             app:cornerRadius="12dp"
             app:elevation="4dp"
-            app:rippleColor="?attr/colorOnSecondary" />
+            app:rippleColor="@color/white10" />
     </GridLayout>
 
-    <!-- CONTROLS: Start / Reset / Next / Result -->
-    <LinearLayout
-        android:id="@+id/controls_row"
+    <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/controls_grid"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="32dp"
-        android:gravity="center"
-        android:orientation="horizontal"
+        android:layout_marginEnd="10dp"
+        app:alignmentMode="alignMargins"
+        app:columnCount="2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/answers_grid">
+        app:layout_constraintTop_toBottomOf="@id/answers_grid"
+        app:rowCount="2"
+        app:useDefaultMargins="true">
 
         <Button
             android:id="@+id/bt_start"
-            style="@style/Widget.ATable.Button"
+            style="@style/Widget.ATable.FunctionButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_weight="1"
-            android:text="@string/start" />
+            android:text="@string/start"
+            app:layout_columnWeight="1" />
 
         <Button
             android:id="@+id/bt_reset"
-            style="@style/Widget.ATable.Button"
+            style="@style/Widget.ATable.FunctionButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_weight="1"
             android:enabled="false"
-            android:text="@string/reset" />
+            android:text="@string/reset"
+            app:layout_columnWeight="1" />
 
         <Button
             android:id="@+id/bt_next"
-            style="@style/Widget.ATable.Button"
+            style="@style/Widget.ATable.FunctionButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_weight="1"
-            android:enabled="true"
-            android:text="@string/next" />
+            android:text="@string/next"
+            app:layout_columnWeight="1" />
 
         <Button
             android:id="@+id/bt_result"
-            style="@style/Widget.ATable.Button"
+            style="@style/Widget.ATable.FunctionButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="10dp"
-            android:layout_weight="1"
             android:enabled="false"
-            android:text="@string/result" />
+            android:text="@string/result"
+            app:layout_columnWeight="1" />
+    </androidx.gridlayout.widget.GridLayout>
 
-    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

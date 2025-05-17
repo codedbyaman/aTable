@@ -11,15 +11,18 @@
     </style>
 
     <!-- ─── 12dp rounded shape (inherits a real MaterialComponents base) ─── -->
-    <style name="ShapeAppearance.ATable.Rounded12"
-        parent="ShapeAppearance.MaterialComponents.MediumComponent">
+    <style name="ShapeAppearance.ATable.Rounded12" parent="ShapeAppearance.MaterialComponents.MediumComponent">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">12dp</item>
     </style>
 
+    <style name="ShapeAppearance.ATable.FunctionRounded" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">100dp</item>
+    </style>
+
     <!-- ─── Tonal “fill” button with built-in disabled fade ─── -->
-    <style name="Widget.ATable.Button"
-        parent="Widget.MaterialComponents.Button">
+    <style name="Widget.ATable.Button" parent="Widget.MaterialComponents.Button">
         <!-- apply our rounded corners -->
         <item name="shapeAppearance">@style/ShapeAppearance.ATable.Rounded12</item>
         <!-- tint-list that 50% fades when disabled -->
@@ -30,6 +33,20 @@
         <item name="android:elevation">4dp</item>
         <!-- ripple color -->
         <item name="rippleColor">?attr/colorOnPrimary</item>
+    </style>
+
+    <style name="Widget.ATable.FunctionButton" parent="Widget.MaterialComponents.Button">
+        <!-- apply our rounded corners -->
+        <item name="shapeAppearance">@style/ShapeAppearance.ATable.FunctionRounded</item>
+        <!-- tint-list that 50% fades when disabled -->
+        <item name="backgroundTint">?attr/colorOnPrimary</item>
+        <!-- white text on primary -->
+        <item name="android:textColor">@color/button_tonal_container</item>
+        <!-- subtle elevation -->
+        <item name="android:elevation">4dp</item>
+        <!-- ripple color -->
+        <item name="rippleColor">@color/button_tonal_container</item>
+
     </style>
 
 </resources>

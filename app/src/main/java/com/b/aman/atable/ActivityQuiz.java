@@ -12,6 +12,9 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Random;
 
 public class ActivityQuiz extends AppCompatActivity {
@@ -155,15 +158,27 @@ public class ActivityQuiz extends AppCompatActivity {
         tvNumber2.setText(String.valueOf(n2));
         tvAnswer.setText("?");
 
-        int offset = random.nextInt(4);
-        int[] opts = {correctAnswer, correctAnswer + 2, correctAnswer + 4, correctAnswer + 6};
-        for (int i = 0; i < 4; i++) {
-            answerButtons[i]
-                    .setText(String.valueOf(opts[(i + offset) % 4]));
+        // 1) collect 1 correct + 3 unique wrong answers
+        List<Integer> opts = new ArrayList<>();
+        opts.add(correctAnswer);
+        while (opts.size() < 4) {
+            // pick a random wrong answer somewhere in [1 .. 2×correct]
+            int wrong = random.nextInt(correctAnswer * 2) + 1;
+            if (wrong != correctAnswer && !opts.contains(wrong)) {
+                opts.add(wrong);
+            }
+        }
+
+// 2) shuffle so correctAnswer lands randomly
+        Collections.shuffle(opts);
+
+// 3) assign to buttons
+        for (int i = 0; i < answerButtons.length; i++) {
+            answerButtons[i].setText(String.valueOf(opts.get(i)));
             answerButtons[i].setEnabled(true);
         }
 
-        // **DO NOT** increment currentIndex here any more.
+
     }
 
     private void onAnswerSelected(View view) {
@@ -219,7 +234,7 @@ public class ActivityQuiz extends AppCompatActivity {
         if (timer != null) timer.cancel();
         tvTimer.setText("15s");
         tvNumber1.setText("1");
-        tvNumber2.setText("1");
+        tvNumber2.setText("0");
         tvAnswer.setText("?");
         for (Button b : answerButtons) {
             b.setText("0");
