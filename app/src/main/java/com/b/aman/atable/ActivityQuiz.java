@@ -1,16 +1,18 @@
 package com.b.aman.atable;
 
-import android.annotation.SuppressLint;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
+import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -34,19 +36,30 @@ public class ActivityQuiz extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
 
-        // ❶ bind all your views before you use them
-        bindViews();
-
-        // ❷ load the chalk font
+        // ① load your chalk font
         chalkFace = Typeface.createFromAsset(getAssets(), "fonts/chalk.ttf");
 
-        // ❸ toolbar, fonts, listeners & initial state
+        // ② toolbar
         setupToolbar();
+
+        // ③ make all your findViewById() calls before using the views
+        bindViews();
+
+        // ④ now it's safe to apply your custom font
         applyChalkFont();
+
+        // ⑤ set up gif in your timer icon
+        ImageView iv = findViewById(R.id.iv_timer_icon);
+        Glide.with(this)
+                .asGif()
+                .load(R.drawable.hourglass_icon)    // your GIF in drawable/
+                .into(iv);
+
+        // ⑥ rest of your wiring
         setupListeners();
         resetQuizState();
-
     }
+
 
     private void setupToolbar() {
         Toolbar toolbar = findViewById(R.id.tool_bar);
@@ -55,16 +68,12 @@ public class ActivityQuiz extends AppCompatActivity {
             getSupportActionBar().setDisplayShowTitleEnabled(false);
     }
 
-    @SuppressLint("ResourceType")
     private void applyChalkFont() {
-        // question & answer display
         tvNumber1.setTypeface(chalkFace);
         tvNumber2.setTypeface(chalkFace);
         tvAnswer.setTypeface(chalkFace);
         tvTimer.setTypeface(chalkFace);
-        tvAnswer.setTypeface(chalkFace);
 
-        // all four option buttons
         for (Button b : answerButtons) {
             b.setTypeface(chalkFace);
         }
