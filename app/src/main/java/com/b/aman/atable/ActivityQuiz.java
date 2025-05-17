@@ -13,16 +13,15 @@ import androidx.appcompat.widget.Toolbar;
 import java.util.Random;
 
 public class ActivityQuiz extends AppCompatActivity {
-
     private static final int TOTAL_QUESTIONS = 10;
-    private static final long QUESTION_DURATION_MS = 15_000; // 15 seconds per question
+    private static final long QUESTION_DURATION_MS = 15_000;
 
     private TextView tvTimer, tvNumber1, tvNumber2, tvAnswer;
     private Button[] answerButtons;
     private Button btStart, btReset, btNext, btResult;
 
     private CountDownTimer timer;
-    private int quizIndex, previewIndex, score, correctAnswer;
+    private int currentIndex, score, correctAnswer;
     private boolean quizStarted = false;
     private final Random random = new Random();
 
@@ -34,7 +33,7 @@ public class ActivityQuiz extends AppCompatActivity {
         setupToolbar();
         bindViews();
         setupListeners();
-        resetAllStates();
+        resetQuizState();
     }
 
     private void setupToolbar() {
@@ -64,123 +63,66 @@ public class ActivityQuiz extends AppCompatActivity {
     }
 
     private void setupListeners() {
-        // START: begin full quiz
         btStart.setOnClickListener(v -> {
             quizStarted = true;
-            quizIndex = 0;
             score = 0;
+            currentIndex = 0;
             btStart.setEnabled(false);
             btReset.setEnabled(true);
             btNext.setEnabled(true);
             btResult.setEnabled(false);
-            launchTimedQuestion();
+            launchQuestionWithTimer();
         });
 
-        // RESET: wipe everything
         btReset.setOnClickListener(v -> {
             quizStarted = false;
-            resetAllStates();
+            resetQuizState();
         });
 
-        // NEXT: preview when not started, otherwise advance with timer
         btNext.setOnClickListener(v -> {
             if (!quizStarted) {
-                previewIndex++;
-                showQuestion(false);
+                // preview next question without timer
+                nextQuestionCore();
             } else {
-                launchTimedQuestion();
+                launchQuestionWithTimer();
             }
         });
 
-        // RESULT: only after quiz finishes
         btResult.setOnClickListener(v -> showResult());
 
-        // each answer button funnels through handleAnswer
         for (Button b : answerButtons) {
-            b.setOnClickListener(v -> handleAnswer(v, /*countForQuiz=*/ quizStarted));
+            b.setOnClickListener(this::onAnswerSelected);
         }
     }
 
-    /**
-     * Common entry both for TIMER‐finish and manual button clicks.
-     *
-     * @param view         the clicked button, or null on timeout
-     * @param countForQuiz true when this should count toward the 10-question quiz
-     */
-    private void handleAnswer(View view, boolean countForQuiz) {
-        // cancel any ongoing timer
+    private void launchQuestionWithTimer() {
         if (timer != null) timer.cancel();
-
-        // if view != null, it was a button click; extract choice
-        if (view instanceof Button) {
-            int chosen = Integer.parseInt(((Button) view).getText().toString());
-            tvAnswer.setText(String.valueOf(correctAnswer));
-            if (chosen == correctAnswer && countForQuiz) {
-                score++;
-                Toast.makeText(this, "Correct!", Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(this, "Wrong!", Toast.LENGTH_SHORT).show();
-            }
-        } else {
-            // timeout path
-            tvAnswer.setText(String.valueOf(correctAnswer));
-            Toast.makeText(this, "Time's up!", Toast.LENGTH_SHORT).show();
-        }
-
-        // disable all answer buttons
-        for (Button b : answerButtons) b.setEnabled(false);
-
-        // if we’re in the real quiz flow, advance or finish
-        if (quizStarted && countForQuiz) {
-            if (quizIndex < TOTAL_QUESTIONS) {
-                launchTimedQuestion();
-            } else {
-                finishQuiz();
-            }
-        }
-    }
-
-    /**
-     * Starts a fresh 15s timer and immediately shows the next question.
-     */
-    private void launchTimedQuestion() {
-        if (timer != null) timer.cancel();
-
-        // start countdown
-        timer = new CountDownTimer(QUESTION_DURATION_MS, 1000) {
+        timer = new CountDownTimer(QUESTION_DURATION_MS, 1_000) {
             @Override
             public void onTick(long m) {
-                tvTimer.setText((m / 1000) + "s");
+                tvTimer.setText((m / 1_000) + "s");
             }
 
             @Override
             public void onFinish() {
                 tvTimer.setText("0s");
-                handleAnswer(/*view=*/ null, /*countForQuiz=*/ true);
+                // mark wrong and auto-advance
+                markWrongAndContinue();
             }
         }.start();
 
-        // bump index and display
-        showQuestion(/*countForQuiz=*/ true);
+        nextQuestionCore();
     }
 
     /**
-     * Displays the next question.
-     *
-     * @param countForQuiz if true, consumes one of the 10 quiz slots; otherwise just previews
+     * Generates the next question but does NOT advance currentIndex here.
      */
-    private void showQuestion(boolean countForQuiz) {
-        // increment index only when we’re counting
-        if (countForQuiz) {
-            quizIndex++;
-        }
-        // bail out if done
-        if (quizIndex > TOTAL_QUESTIONS) {
+    private void nextQuestionCore() {
+        if (currentIndex >= TOTAL_QUESTIONS) {
             finishQuiz();
             return;
         }
 
-        // generate new operands
         int n1 = random.nextInt(20) + 1;
         int n2 = random.nextInt(10) + 1;
         correctAnswer = n1 * n2;
@@ -189,21 +131,52 @@ public class ActivityQuiz extends AppCompatActivity {
         tvNumber2.setText(String.valueOf(n2));
         tvAnswer.setText("?");
 
-        // shuffle options
         int offset = random.nextInt(4);
-        int[] opts = new int[]{correctAnswer,
-                correctAnswer + 2,
-                correctAnswer + 4,
-                correctAnswer + 6};
+        int[] opts = {correctAnswer, correctAnswer + 2, correctAnswer + 4, correctAnswer + 6};
         for (int i = 0; i < 4; i++) {
-            answerButtons[i].setText(String.valueOf(opts[(i + offset) % 4]));
+            answerButtons[i]
+                    .setText(String.valueOf(opts[(i + offset) % 4]));
             answerButtons[i].setEnabled(true);
+        }
+
+        // **DO NOT** increment currentIndex here any more.
+    }
+
+    private void onAnswerSelected(View view) {
+        if (timer != null) timer.cancel();
+
+        Button b = (Button) view;
+        int chosen = Integer.parseInt(b.getText().toString());
+        boolean wasCorrect = (chosen == correctAnswer);
+
+        if (wasCorrect) score++;
+
+        tvAnswer.setText(String.valueOf(correctAnswer));
+        Toast.makeText(
+                this,
+                wasCorrect ? "Correct!" : "Wrong!",
+                Toast.LENGTH_SHORT
+        ).show();
+
+        for (Button btn : answerButtons) btn.setEnabled(false);
+
+        // **Only now** bump to the next question index:
+        currentIndex++;
+
+        // Auto-advance if we're mid-quiz:
+        if (quizStarted) {
+            launchQuestionWithTimer();
         }
     }
 
-    /**
-     * Called when the 10-question quiz is complete.
-     */
+    private void markWrongAndContinue() {
+        for (Button b : answerButtons) b.setEnabled(false);
+        if (quizStarted) {
+            currentIndex++;
+            launchQuestionWithTimer();
+        }
+    }
+
     private void finishQuiz() {
         if (timer != null) timer.cancel();
         for (Button b : answerButtons) b.setEnabled(false);
@@ -211,34 +184,23 @@ public class ActivityQuiz extends AppCompatActivity {
         btResult.setEnabled(true);
     }
 
-    /**
-     * Shows Pass/Fail based on a 10-question scale, regardless of how many answered.
-     */
     private void showResult() {
+        // always out of 10
         int percent = (score * 100) / TOTAL_QUESTIONS;
         String msg = (percent >= 60 ? "Pass: " : "Fail: ") + percent + "%";
         Toast.makeText(this, msg, Toast.LENGTH_LONG).show();
     }
 
-    /**
-     * Resets all UI and counters to the pre-quiz state.
-     */
-    private void resetAllStates() {
+    private void resetQuizState() {
         if (timer != null) timer.cancel();
         tvTimer.setText("15s");
         tvNumber1.setText("0");
         tvNumber2.setText("0");
         tvAnswer.setText("");
-        quizIndex = 0;
-        previewIndex = 0;
-        score = 0;
-        quizStarted = false;
-
         for (Button b : answerButtons) {
             b.setText("-");
             b.setEnabled(false);
         }
-
         btStart.setEnabled(true);
         btReset.setEnabled(false);
         btNext.setEnabled(true);

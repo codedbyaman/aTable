@@ -118,7 +118,7 @@
             android:textSize="16sp"
             app:cornerRadius="12dp"
             app:elevation="4dp"
-            app:rippleColor="?attr/colorOnSecondary" />
+            app:rippleColor="@color/white10" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/bt_ans2"
@@ -180,6 +180,7 @@
             style="@style/Widget.ATable.Button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
             android:layout_weight="1"
             android:text="@string/start" />
 
@@ -209,6 +210,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
+            android:layout_marginEnd="10dp"
             android:layout_weight="1"
             android:enabled="false"
             android:text="@string/result" />
