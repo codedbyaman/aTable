@@ -21,11 +21,12 @@ import java.util.Random;
 
 public class ActivityQuiz extends AppCompatActivity {
     private static final int TOTAL_QUESTIONS = 10;
-    private static final long QUESTION_DURATION_MS = 15_000;
+    private static final long QUESTION_DURATION_MS = 15_000L;
     private final Random random = new Random();
     private TextView tvTimer, tvNumber1, tvNumber2, tvAnswer;
     private Button[] answerButtons;
     private Button btStart, btReset, btNext, btResult;
+    private ImageView ivTimerIcon;
     private CountDownTimer timer;
     private int currentIndex, score, correctAnswer;
     private boolean quizStarted = false;
@@ -36,50 +37,17 @@ public class ActivityQuiz extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
 
-        // ① load your chalk font
+        // ① Load chalk font from assets/fonts/chalk.ttf
         chalkFace = Typeface.createFromAsset(getAssets(), "fonts/chalk.ttf");
 
-        // ② toolbar
-        setupToolbar();
-
-        // ③ make all your findViewById() calls before using the views
-        bindViews();
-
-        // ④ now it's safe to apply your custom font
-        applyChalkFont();
-
-        // ⑤ set up gif in your timer icon
-        ImageView iv = findViewById(R.id.iv_timer_icon);
-        Glide.with(this)
-                .asGif()
-                .load(R.drawable.hourglass_icon)    // your GIF in drawable/
-                .into(iv);
-
-        // ⑥ rest of your wiring
-        setupListeners();
-        resetQuizState();
-    }
-
-
-    private void setupToolbar() {
+        // ② Toolbar
         Toolbar toolbar = findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null)
             getSupportActionBar().setDisplayShowTitleEnabled(false);
-    }
 
-    private void applyChalkFont() {
-        tvNumber1.setTypeface(chalkFace);
-        tvNumber2.setTypeface(chalkFace);
-        tvAnswer.setTypeface(chalkFace);
-        tvTimer.setTypeface(chalkFace);
-
-        for (Button b : answerButtons) {
-            b.setTypeface(chalkFace);
-        }
-    }
-
-    private void bindViews() {
+        // ③ Bind all views
+        ivTimerIcon = findViewById(R.id.iv_timer_icon);
         tvTimer = findViewById(R.id.tv_timer);
         tvNumber1 = findViewById(R.id.tv_number1);
         tvNumber2 = findViewById(R.id.tv_number2);
@@ -96,6 +64,24 @@ public class ActivityQuiz extends AppCompatActivity {
         btReset = findViewById(R.id.bt_reset);
         btNext = findViewById(R.id.bt_next);
         btResult = findViewById(R.id.bt_result);
+
+        // ④ Apply chalk font only to question/answer texts
+        tvNumber1.setTypeface(chalkFace);
+        tvNumber2.setTypeface(chalkFace);
+        tvAnswer.setTypeface(chalkFace);
+        tvTimer.setTypeface(chalkFace);
+        for (Button b : answerButtons) {
+            b.setTypeface(chalkFace);
+        }
+
+        // ⑤ Start with the static PNG
+        ivTimerIcon.setImageResource(R.drawable.hourglass_iconpng);
+
+        // ⑥ Wire up listeners
+        setupListeners();
+
+        // ⑦ Reset UI to initial state
+        resetQuizState();
     }
 
     private void setupListeners() {
@@ -107,17 +93,27 @@ public class ActivityQuiz extends AppCompatActivity {
             btReset.setEnabled(true);
             btNext.setEnabled(true);
             btResult.setEnabled(false);
+
+            // swap in the GIF
+            Glide.with(this)
+                    .asGif()
+                    .load(R.drawable.hourglass_icon)     // your .gif filename
+                    .into(ivTimerIcon);
+
             launchQuestionWithTimer();
         });
 
         btReset.setOnClickListener(v -> {
             quizStarted = false;
             resetQuizState();
+
+            // restore static PNG
+            ivTimerIcon.setImageResource(R.drawable.hourglass_iconpng);
         });
 
         btNext.setOnClickListener(v -> {
             if (!quizStarted) {
-                // preview next question without timer
+                // preview without timer
                 nextQuestionCore();
             } else {
                 launchQuestionWithTimer();
@@ -133,16 +129,16 @@ public class ActivityQuiz extends AppCompatActivity {
 
     private void launchQuestionWithTimer() {
         if (timer != null) timer.cancel();
+
         timer = new CountDownTimer(QUESTION_DURATION_MS, 1_000) {
             @Override
-            public void onTick(long m) {
-                tvTimer.setText((m / 1_000) + "s");
+            public void onTick(long millisUntilFinished) {
+                tvTimer.setText((millisUntilFinished / 1000) + "s");
             }
 
             @Override
             public void onFinish() {
                 tvTimer.setText("0s");
-                // mark wrong and auto-advance
                 markWrongAndContinue();
             }
         }.start();
@@ -150,15 +146,13 @@ public class ActivityQuiz extends AppCompatActivity {
         nextQuestionCore();
     }
 
-    /**
-     * Generates the next question but does NOT advance currentIndex here.
-     */
     private void nextQuestionCore() {
         if (currentIndex >= TOTAL_QUESTIONS) {
             finishQuiz();
             return;
         }
 
+        // generate operands
         int n1 = random.nextInt(20) + 1;
         int n2 = random.nextInt(10) + 1;
         correctAnswer = n1 * n2;
@@ -167,27 +161,23 @@ public class ActivityQuiz extends AppCompatActivity {
         tvNumber2.setText(String.valueOf(n2));
         tvAnswer.setText("?");
 
-        // 1) collect 1 correct + 3 unique wrong answers
+        // build 1 correct + 3 unique wrong answers
         List<Integer> opts = new ArrayList<>();
         opts.add(correctAnswer);
         while (opts.size() < 4) {
-            // pick a random wrong answer somewhere in [1 .. 2×correct]
-            int wrong = random.nextInt(correctAnswer * 2) + 1;
-            if (wrong != correctAnswer && !opts.contains(wrong)) {
+            int wrong = random.nextInt(correctAnswer * 2 + 1);
+            if (wrong > 0 && wrong != correctAnswer && !opts.contains(wrong)) {
                 opts.add(wrong);
             }
         }
-
-// 2) shuffle so correctAnswer lands randomly
         Collections.shuffle(opts);
 
-// 3) assign to buttons
-        for (int i = 0; i < answerButtons.length; i++) {
+        for (int i = 0; i < 4; i++) {
             answerButtons[i].setText(String.valueOf(opts.get(i)));
             answerButtons[i].setEnabled(true);
         }
 
-
+        currentIndex++;
     }
 
     private void onAnswerSelected(View view) {
@@ -195,23 +185,14 @@ public class ActivityQuiz extends AppCompatActivity {
 
         Button b = (Button) view;
         int chosen = Integer.parseInt(b.getText().toString());
-        boolean wasCorrect = (chosen == correctAnswer);
-
-        if (wasCorrect) score++;
+        boolean correct = chosen == correctAnswer;
+        if (correct) score++;
 
         tvAnswer.setText(String.valueOf(correctAnswer));
-        Toast.makeText(
-                this,
-                wasCorrect ? "Correct!" : "Wrong!",
-                Toast.LENGTH_SHORT
-        ).show();
+        Toast.makeText(this, correct ? "Correct!" : "Wrong!", Toast.LENGTH_SHORT).show();
 
         for (Button btn : answerButtons) btn.setEnabled(false);
 
-        // **Only now** bump to the next question index:
-        currentIndex++;
-
-        // Auto-advance if we're mid-quiz:
         if (quizStarted) {
             launchQuestionWithTimer();
         }
@@ -220,7 +201,6 @@ public class ActivityQuiz extends AppCompatActivity {
     private void markWrongAndContinue() {
         for (Button b : answerButtons) b.setEnabled(false);
         if (quizStarted) {
-            currentIndex++;
             launchQuestionWithTimer();
         }
     }
@@ -233,7 +213,6 @@ public class ActivityQuiz extends AppCompatActivity {
     }
 
     private void showResult() {
-        // always out of 10
         int percent = (score * 100) / TOTAL_QUESTIONS;
         String msg = (percent >= 60 ? "Pass: " : "Fail: ") + percent + "%";
         Toast.makeText(this, msg, Toast.LENGTH_LONG).show();
