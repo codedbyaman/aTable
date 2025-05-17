@@ -1,5 +1,7 @@
 package com.b.aman.atable;
 
+import android.annotation.SuppressLint;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
@@ -15,25 +17,32 @@ import java.util.Random;
 public class ActivityQuiz extends AppCompatActivity {
     private static final int TOTAL_QUESTIONS = 10;
     private static final long QUESTION_DURATION_MS = 15_000;
-
+    private final Random random = new Random();
     private TextView tvTimer, tvNumber1, tvNumber2, tvAnswer;
     private Button[] answerButtons;
     private Button btStart, btReset, btNext, btResult;
-
     private CountDownTimer timer;
     private int currentIndex, score, correctAnswer;
     private boolean quizStarted = false;
-    private final Random random = new Random();
+    private Typeface chalkFace;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
 
-        setupToolbar();
+        // ❶ bind all your views before you use them
         bindViews();
+
+        // ❷ load the chalk font
+        chalkFace = Typeface.createFromAsset(getAssets(), "fonts/chalk.ttf");
+
+        // ❸ toolbar, fonts, listeners & initial state
+        setupToolbar();
+        applyChalkFont();
         setupListeners();
         resetQuizState();
+
     }
 
     private void setupToolbar() {
@@ -41,6 +50,21 @@ public class ActivityQuiz extends AppCompatActivity {
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null)
             getSupportActionBar().setDisplayShowTitleEnabled(false);
+    }
+
+    @SuppressLint("ResourceType")
+    private void applyChalkFont() {
+        // question & answer display
+        tvNumber1.setTypeface(chalkFace);
+        tvNumber2.setTypeface(chalkFace);
+        tvAnswer.setTypeface(chalkFace);
+        tvTimer.setTypeface(chalkFace);
+        tvAnswer.setTypeface(chalkFace);
+
+        // all four option buttons
+        for (Button b : answerButtons) {
+            b.setTypeface(chalkFace);
+        }
     }
 
     private void bindViews() {
@@ -194,11 +218,11 @@ public class ActivityQuiz extends AppCompatActivity {
     private void resetQuizState() {
         if (timer != null) timer.cancel();
         tvTimer.setText("15s");
-        tvNumber1.setText("0");
-        tvNumber2.setText("0");
-        tvAnswer.setText("");
+        tvNumber1.setText("1");
+        tvNumber2.setText("1");
+        tvAnswer.setText("?");
         for (Button b : answerButtons) {
-            b.setText("-");
+            b.setText("0");
             b.setEnabled(false);
         }
         btStart.setEnabled(true);

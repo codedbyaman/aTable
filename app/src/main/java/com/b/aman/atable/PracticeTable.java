@@ -21,7 +21,6 @@ import com.google.android.material.textfield.TextInputLayout;
 
 public class PracticeTable extends AppCompatActivity {
 
-    private Toolbar toolbar;
     private TextInputLayout tilInput;
     private TextInputEditText etInput;
     private MaterialButton btSubmit;
@@ -33,7 +32,7 @@ public class PracticeTable extends AppCompatActivity {
         setContentView(R.layout.activity_practice);
 
         // 1) TOOLBAR
-        toolbar = findViewById(R.id.tool_bar);
+        Toolbar toolbar = findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
             // Hide automatic title / back arrow
