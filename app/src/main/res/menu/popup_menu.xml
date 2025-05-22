@@ -12,4 +12,8 @@
         android:id="@+id/english"
         android:title="ENGLISH" />
 
+    <item
+        android:id="@+id/pahada"
+        android:title="PAHADA" />
+
 </menu>
