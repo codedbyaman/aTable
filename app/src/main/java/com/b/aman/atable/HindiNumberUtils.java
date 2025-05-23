@@ -95,6 +95,9 @@ public class HindiNumberUtils {
         if (number < 20) return units[(int) number];
 
         if (number < 100) {
+            if (special.containsKey((int) number)) {
+                return special.get((int) number);
+            }
             int ten = (int) number / 10;
             int unit = (int) number % 10;
             return tens[ten] + (unit != 0 ? " " + units[unit] : "");
@@ -122,6 +125,7 @@ public class HindiNumberUtils {
         long rest = number % 10000000;
         return convert(crores) + " crore" + (rest != 0 ? " " + convert(rest) : "");
     }
+
 
 }
 
