@@ -19,6 +19,8 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.b.aman.atable.data.CacheHelper;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
 
@@ -146,16 +148,30 @@ public class DetailActivity extends AppCompatActivity
         }
 
         // choose language + male Hindi voice if required
-        if (isHindi()) {
-            textToSpeech.setLanguage(LOCALE_HINDI);
-            setMaleHindiVoiceIfAvailable();
-        } else {
-            textToSpeech.setLanguage(Locale.ENGLISH);
+        /**
+         *  TODO fix this, not in use.
+         */
+//        if (isHindi()) {
+//            textToSpeech.setLanguage(LOCALE_HINDI);
+//            setMaleHindiVoiceIfAvailable();
+//        } else {
+//            textToSpeech.setLanguage(Locale.ENGLISH);
+//        }
+
+        Toast.makeText(this, "🔊 Speaking table…", Toast.LENGTH_SHORT).show();
+        if(isPahada()) {
+            List<String> multipliers = Arrays.asList(
+                    "ekam", "dooni", "tiya", "chauke", "panche",
+                    "chhake", "satte", "aathe", "naume", "dasse"
+            );
+            PahadaUtils.speakPahada(number, textToSpeech, multipliers);
+        } else if (isHindi()) {
+            textToSpeech.speak(buildHindiSpeech(), TextToSpeech.QUEUE_FLUSH, null, "table");
+        }
+        else {
+            textToSpeech.speak(buildEnglishSpeech(), TextToSpeech.QUEUE_FLUSH, null, "table");
         }
 
-        String utterance = isHindi() ? buildHindiSpeech() : buildEnglishSpeech();
-        Toast.makeText(this, "🔊 Speaking table…", Toast.LENGTH_SHORT).show();
-        textToSpeech.speak(utterance, TextToSpeech.QUEUE_FLUSH, null, "table");
     }
 
     private void setMaleHindiVoiceIfAvailable() {
@@ -192,6 +208,10 @@ public class DetailActivity extends AppCompatActivity
     /*language helpers */
     private boolean isHindi() {
         return "hindi".equalsIgnoreCase(getCurrentLanguage());
+    }
+
+    private boolean isPahada() {
+        return "pahada".equalsIgnoreCase(getCurrentLanguage());
     }
 
     private String getCurrentLanguage() {
